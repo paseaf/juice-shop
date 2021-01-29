@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const server = require('./../server.js')
+const server = require('./../server')
 
 module.exports = async () => {
   server.close()

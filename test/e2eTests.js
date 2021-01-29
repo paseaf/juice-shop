@@ -11,7 +11,7 @@ if (process.argv && process.argv.length >= 3 && process.argv[2] === 'subfolder')
   server = require('./e2eSubfolder.js')
   confName = 'protractor.subfolder.conf.js'
 } else {
-  server = require('../server.js')
+  server = require('../server')
   confName = 'protractor.conf.js'
 }
 
