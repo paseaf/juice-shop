@@ -11,8 +11,8 @@ const logger = require('./../lib/logger')
 const serverApp = require('./../server')
 
 const url = require('url')
-const originalBase = require('../protractor.conf.js').config.baseUrl
-const baseUrl = new url.URL(require('../protractor.subfolder.conf.js').config.baseUrl)
+const originalBase = require('../protractor.conf.ts').config.baseUrl
+const baseUrl = new url.URL(require('../protractor.subfolder.conf.ts').config.baseUrl)
 const basePath = baseUrl.pathname
 const proxyPort = baseUrl.port
 process.env.BASE_PATH = basePath
