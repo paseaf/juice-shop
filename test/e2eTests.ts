@@ -8,7 +8,7 @@ const colors = require('colors/safe')
 
 let server, confName
 if (process.argv && process.argv.length >= 3 && process.argv[2] === 'subfolder') {
-  server = require('./e2eSubfolder.js')
+  server = require('./e2eSubfolder')
   confName = 'protractor.subfolder.conf.js'
 } else {
   server = require('../server.js')
