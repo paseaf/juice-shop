@@ -167,6 +167,7 @@
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/mocha": "^8.2.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "cross-spawn": "^7.0.3",
