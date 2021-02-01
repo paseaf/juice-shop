@@ -71,10 +71,10 @@
     "vagrant": "cd vagrant && vagrant up"
   },
   "jest": {
-    "globalSetup": "./test/apiTestsSetup.js",
-    "globalTeardown": "./test/apiTestsTeardown.js",
+    "globalSetup": "./test/apiTestsSetup.ts",
+    "globalTeardown": "./test/apiTestsTeardown.ts",
     "setupFilesAfterEnv": [
-      "./test/apiTestsSetupJest.js"
+      "./test/apiTestsSetupJest.ts"
     ],
     "testMatch": [
       "**/test/api/*Spec.js"
@@ -167,6 +167,7 @@
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/jest": "^26.0.20",
     "@types/mocha": "^8.2.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
