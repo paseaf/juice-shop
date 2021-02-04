@@ -54,7 +54,7 @@
   "scripts": {
     "build": "cd frontend && node ./node_modules/@angular/cli/bin/ng build --aot --prod --output-hashing=none --vendor-chunk=true --source-map=false",
     "e2e": "ts-node test/e2eTests.ts",
-    "frisby": "tsc && nyc --report-dir=./build/reports/coverage/api-tests jest --silent --runInBand --forceExit",
+    "frisby": "nyc --report-dir=./build/reports/coverage/api-tests jest --silent --runInBand --forceExit",
     "postinstall": "cd frontend && npm install && cd .. && npm run build",
     "lint": "eslint *.js data lib models routes test views && cd frontend && ng lint && npx stylelint \"**/*.scss\" && cd ..",
     "lint:config": "schema validate -s config.schema.yml",
@@ -67,7 +67,7 @@
     "start": "node app",
     "test": "cd frontend && ng test --watch=false --source-map=true && cd .. && npm run test:server",
     "test:chromium": "cd frontend && ng test --watch=false --source-map=false --browsers=ChromiumHeadless && cd .. && npm run test:server",
-    "test:server": "tsc && nyc --report-dir=./build/reports/coverage/server-tests mocha -r ts-node/register -r source-map-support/register --recursive test/server",
+    "test:server": "nyc --report-dir=./build/reports/coverage/server-tests mocha -r ts-node/register -r source-map-support/register --recursive test/server",
     "vagrant": "cd vagrant && vagrant up"
   },
   "jest": {
