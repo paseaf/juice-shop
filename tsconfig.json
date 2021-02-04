@@ -25,4 +25,7 @@
     "**/*.d.ts",
     ".eslintrc.js"
   ],
+  "ts-node": {
+    "transpileOnly": true  // allow ts-node to run code with compile errors ignored. Remove this line after ts migration.
+  }
 }

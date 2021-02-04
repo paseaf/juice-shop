@@ -8,7 +8,7 @@ const server = require('http').Server(app)
 const request = require('request')
 const colors = require('colors/safe')
 const logger = require('./../lib/logger')
-const serverApp = require('./../server.js')
+const serverApp = require('./../server')
 
 const url = require('url')
 const originalBase = require('../protractor.conf.js').config.baseUrl
@@ -22,7 +22,7 @@ app.use('/subfolder', (req, res) => {
   req.pipe(request({ qs: req.query, uri: proxyUrl })).pipe(res)
 })
 
-exports.start = async function (readyCallback) {
+export const start = async function (readyCallback) {
   serverApp.start(() => {
     server.listen(proxyPort, () => {
       logger.info(colors.cyan(`Subfolder proxy listening on port ${proxyPort}`))
@@ -34,11 +34,11 @@ exports.start = async function (readyCallback) {
   })
 }
 
-exports.close = function (exitCode) {
+export const close = function (exitCode) {
   return serverApp.close(exitCode)
 }
 
 const ownFilename = __filename.slice(__dirname.length + 1)
 if (process.argv && process.argv.length > 1 && process.argv[1].endsWith(ownFilename)) {
-  exports.start()
+  start()
 }
