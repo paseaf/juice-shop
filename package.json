@@ -71,13 +71,13 @@
     "vagrant": "cd vagrant && vagrant up"
   },
   "jest": {
-    "globalSetup": "./test/apiTestsSetup.js",
-    "globalTeardown": "./test/apiTestsTeardown.js",
+    "globalSetup": "./test/apiTestsSetup.ts",
+    "globalTeardown": "./test/apiTestsTeardown.ts",
     "setupFilesAfterEnv": [
-      "./test/apiTestsSetupJest.js"
+      "./test/apiTestsSetupJest.ts"
     ],
     "testMatch": [
-      "**/test/api/*Spec.js"
+      "**/test/api/*Spec.ts"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
