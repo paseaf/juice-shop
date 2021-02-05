@@ -578,7 +578,7 @@ app.use(angular())
 app.use(verify.errorHandlingChallenge())
 app.use(errorhandler())
 
-exports.start = async function (readyCallback) {
+export async function start (readyCallback) {
   const datacreatorEnd = startupGauge.startTimer({ task: 'datacreator' })
   await models.sequelize.sync({ force: true })
   await datacreator()
@@ -602,7 +602,7 @@ exports.start = async function (readyCallback) {
   collectDurationPromise('customizeEasterEgg', require('./lib/startup/customizeEasterEgg'))()
 }
 
-exports.close = function (exitCode) {
+export async function close (exitCode) {
   if (server) {
     clearInterval(metricsUpdateLoop)
     server.close()

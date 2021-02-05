@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const server = require('./../server.js')
+import * as server from '../server'
 
-module.exports = () => new Promise((resolve, reject) =>
+export default () => new Promise((resolve, reject) =>
   server.start(err => {
     if (err) {
       reject(err)
