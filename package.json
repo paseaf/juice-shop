@@ -99,7 +99,7 @@
     "all": true,
     "include": [
       "lib/*.js",
-      "routes/*.js"
+      "routes/*.ts"
     ],
     "reporter": [
       "lcov",
