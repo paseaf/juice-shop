@@ -24,4 +24,4 @@ exclude_patterns:
   - 'data/datacreator.ts'
   - 'frontend/src/hacking-instructor/**/*.ts'
   - 'frontend/src/assets/private/*.js'
-  - 'lib/logger.js'
+  - 'lib/logger.ts'
