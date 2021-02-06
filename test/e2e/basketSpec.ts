@@ -5,7 +5,7 @@
 
 const insecurity = require('../../lib/insecurity')
 const config = require('config')
-const models = require('../../models/index')
+const models = require('../../models/index.ts')
 
 describe('/#/basket', () => {
   describe('as admin', () => {

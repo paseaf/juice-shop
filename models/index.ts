@@ -25,7 +25,7 @@ sequelizeNoUpdateAttributes(sequelize)
 const db = {}
 
 fs.readdirSync(__dirname)
-  .filter(file => (file.indexOf('.') !== 0) && (file !== 'index.js'))
+  .filter(file => (file.indexOf('.') !== 0) && (file !== 'index.ts'))
   .forEach(file => {
     const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes)
     db[model.name] = model

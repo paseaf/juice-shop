@@ -4,7 +4,7 @@
  */
 
 const config = require('config')
-const models = require('../../models/index')
+const models = require('../../models/index.ts')
 const utils = require('../../lib/utils')
 
 describe('/api', () => {
