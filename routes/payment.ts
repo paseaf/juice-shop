@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
+import models = require('../models/index')
 
-module.exports.getPaymentMethods = function getPaymentMethods () {
+export function getPaymentMethods () {
   return async (req, res, next) => {
     const cards = await models.Card.findAll({ where: { UserId: req.body.UserId } })
     cards.forEach(card => {
@@ -16,7 +16,7 @@ module.exports.getPaymentMethods = function getPaymentMethods () {
   }
 }
 
-module.exports.getPaymentMethodById = function getPaymentMethodById () {
+export function getPaymentMethodById () {
   return async (req, res, next) => {
     const card = await models.Card.findOne({ where: { id: req.params.id, UserId: req.body.UserId } })
     if (card) {
@@ -31,7 +31,7 @@ module.exports.getPaymentMethodById = function getPaymentMethodById () {
   }
 }
 
-module.exports.delPaymentMethodById = function delPaymentMethodById () {
+export function delPaymentMethodById () {
   return async (req, res, next) => {
     const card = await models.Card.destroy({ where: { id: req.params.id, UserId: req.body.UserId } })
     if (card) {

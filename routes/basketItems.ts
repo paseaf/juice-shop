@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const challenges = require('../data/datacache').challenges
-const insecurity = require('../lib/insecurity')
-const models = require('../models/index')
+import utils = require('../lib/utils')
+import { challenges } from '../data/datacache'
+import insecurity = require('../lib/insecurity')
+import models = require('../models/index')
 
-module.exports.addBasketItem = function addBasketItem () {
+export function addBasketItem () {
   return (req, res, next) => {
     const result = utils.parseJsonCustom(req.rawBody)
     const productIds = []
@@ -50,13 +50,13 @@ module.exports.addBasketItem = function addBasketItem () {
   }
 }
 
-module.exports.quantityCheckBeforeBasketItemAddition = function quantityCheckBeforeBasketItemAddition () {
+export function quantityCheckBeforeBasketItemAddition () {
   return (req, res, next) => {
     quantityCheck(req, res, next, req.body.ProductId, req.body.quantity)
   }
 }
 
-module.exports.quantityCheckBeforeBasketItemUpdate = function quantityCheckBeforeBasketItemUpdate () {
+export function quantityCheckBeforeBasketItemUpdate () {
   return (req, res, next) => {
     models.BasketItem.findOne({ where: { id: req.params.id } }).then((item) => {
       const user = insecurity.authenticatedUsers.from(req)

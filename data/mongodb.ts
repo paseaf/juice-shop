@@ -13,4 +13,4 @@ const db = {
   orders
 }
 
-module.exports = db
+export = db

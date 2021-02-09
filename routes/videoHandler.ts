@@ -6,11 +6,11 @@
 const fs = require('fs')
 const pug = require('pug')
 const config = require('config')
-const challenges = require('../data/datacache').challenges
-const utils = require('../lib/utils')
-const themes = require('../views/themes/themes').themes
+import { challenges } from '../data/datacache'
+import utils = require('../lib/utils')
+import { themes } from '../views/themes/themes'
 
-exports.getVideo = () => {
+export const getVideo = () => {
   return (req, res) => {
     const path = videoPath()
     const stat = fs.statSync(path)
@@ -42,7 +42,7 @@ exports.getVideo = () => {
   }
 }
 
-exports.promotionVideo = () => {
+export const promotionVideo = () => {
   return (req, res) => {
     fs.readFile('views/promotionVideo.pug', function (err, buf) {
       if (err) throw err

@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
-const insecurity = require('../lib/insecurity')
+import models = require('../models/index')
+import insecurity = require('../lib/insecurity')
 
-module.exports = function erasureRequest () {
+export = function erasureRequest () {
   return (req, res, next) => {
     const loggedInUser = insecurity.authenticatedUsers.from(req)
     if (loggedInUser) {

@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
+import models = require('../models/index')
 
-module.exports.addMemory = function addMemory () {
+export function addMemory () {
   return async (req, res, next) => {
     const record = {
       caption: req.body.caption,
@@ -17,7 +17,7 @@ module.exports.addMemory = function addMemory () {
   }
 }
 
-module.exports.getMemories = function getMemories () {
+export function getMemories () {
   return async (req, res, next) => {
     const memories = await models.Memory.findAll({ include: [models.User] })
     res.status(200).json({ status: 'success', data: memories })

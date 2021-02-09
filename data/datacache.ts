@@ -4,12 +4,12 @@
  */
 
 /* jslint node: true */
-exports.challenges = {}
-exports.users = {}
-exports.products = {}
-exports.feedback = {}
-exports.baskets = {}
-exports.basketItems = {}
-exports.complaints = {}
+export const challenges = {}
+export const users = {}
+export const products = {}
+export const feedback = {}
+export const baskets = {}
+export const basketItems = {}
+export const complaints = {}
 
-exports.notifications = []
+export const notifications = []

@@ -4,15 +4,15 @@
  */
 
 const { Bot } = require('juicy-chat-bot')
-const insecurity = require('../lib/insecurity')
+import insecurity = require('../lib/insecurity')
 const jwt = require('jsonwebtoken')
-const utils = require('../lib/utils')
-const botUtils = require('../lib/botUtils')
+import utils = require('../lib/utils')
+import botUtils = require('../lib/botUtils')
 const config = require('config')
 const fs = require('fs')
 const download = require('download')
-const models = require('../models/index')
-const challenges = require('../data/datacache').challenges
+import models = require('../models/index')
+import { challenges } from '../data/datacache'
 
 let trainingFile = config.get('application.chatBot.trainingData')
 let testCommand, bot
@@ -115,11 +115,9 @@ function setUserName (user, req, res) {
   })
 }
 
-module.exports.initialize = initialize
+export { initialize, bot }
 
-module.exports.bot = bot
-
-module.exports.status = function status () {
+export function status () {
   return async (req, res, next) => {
     if (!bot) {
       res.status(200).json({
@@ -172,7 +170,7 @@ module.exports.status = function status () {
   }
 }
 
-module.exports.process = function respond () {
+export const process = function respond () {
   return async (req, res, next) => {
     if (!bot) {
       res.status(200).json({

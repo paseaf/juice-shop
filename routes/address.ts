@@ -3,16 +3,16 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
+import models = require('../models/index')
 
-module.exports.getAddress = function getAddress () {
+export function getAddress () {
   return async (req, res, next) => {
     const addresses = await models.Address.findAll({ where: { UserId: req.body.UserId } })
     res.status(200).json({ status: 'success', data: addresses })
   }
 }
 
-module.exports.getAddressById = function getAddressById () {
+export function getAddressById () {
   return async (req, res, next) => {
     const address = await models.Address.findOne({ where: { id: req.params.id, UserId: req.body.UserId } })
     if (address) {
@@ -23,7 +23,7 @@ module.exports.getAddressById = function getAddressById () {
   }
 }
 
-module.exports.delAddressById = function delAddressById () {
+export function delAddressById () {
   return async (req, res, next) => {
     const address = await models.Address.destroy({ where: { id: req.params.id, UserId: req.body.UserId } })
     if (address) {

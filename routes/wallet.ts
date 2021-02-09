@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
+import models = require('../models/index')
 
-module.exports.getWalletBalance = function getWalletBalance () {
+export function getWalletBalance () {
   return async (req, res, next) => {
     const wallet = await models.Wallet.findOne({ where: { UserId: req.body.UserId } })
     if (wallet) {
@@ -16,7 +16,7 @@ module.exports.getWalletBalance = function getWalletBalance () {
   }
 }
 
-module.exports.addWalletBalance = function addWalletBalance () {
+export function addWalletBalance () {
   return async (req, res, next) => {
     const cardId = req.body.paymentId
     const card = cardId ? await models.Card.findOne({ where: { id: cardId, UserId: req.body.UserId } }) : null

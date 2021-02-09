@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const insecurity = require('../lib/insecurity')
-const db = require('../data/mongodb')
+import insecurity = require('../lib/insecurity')
+import db = require('../data/mongodb')
 
-module.exports.orderHistory = function orderHistory () {
+export function orderHistory () {
   return async (req, res, next) => {
     const loggedInUser = insecurity.authenticatedUsers.get(req.headers.authorization.replace('Bearer ', ''))
     if (loggedInUser && loggedInUser.data && loggedInUser.data.email && loggedInUser.data.id) {
@@ -20,7 +20,7 @@ module.exports.orderHistory = function orderHistory () {
   }
 }
 
-module.exports.allOrders = function allOrders () {
+export function allOrders () {
   return async (req, res, next) => {
     const orders = await db.orders.find()
     res.status(200).json({ status: 'success', data: orders.reverse() })

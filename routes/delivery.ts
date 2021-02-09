@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
-const insecurity = require('../lib/insecurity')
+import models = require('../models/index')
+import insecurity = require('../lib/insecurity')
 
-module.exports.getDeliveryMethods = function getDeliveryMethods () {
+export function getDeliveryMethods () {
   return async (req, res, next) => {
     const methods = await models.Delivery.findAll()
     if (methods) {
@@ -27,7 +27,7 @@ module.exports.getDeliveryMethods = function getDeliveryMethods () {
   }
 }
 
-module.exports.getDeliveryMethod = function getDeliveryMethod () {
+export function getDeliveryMethod () {
   return async (req, res, next) => {
     const method = await models.Delivery.findOne({ where: { id: req.params.id } })
     if (method) {

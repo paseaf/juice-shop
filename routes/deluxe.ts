@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
-const insecurity = require('../lib/insecurity')
-const utils = require('../lib/utils')
-const challenges = require('../data/datacache').challenges
+import models = require('../models/index')
+import insecurity = require('../lib/insecurity')
+import utils = require('../lib/utils')
+import { challenges } from '../data/datacache'
 
-module.exports.upgradeToDeluxe = function upgradeToDeluxe () {
+export function upgradeToDeluxe () {
   return async (req, res, next) => {
     const user = await models.User.findOne({ where: { id: req.body.UserId, role: insecurity.roles.customer } })
     if (!user) {
@@ -44,7 +44,7 @@ module.exports.upgradeToDeluxe = function upgradeToDeluxe () {
   }
 }
 
-module.exports.deluxeMembershipStatus = function deluxeMembershipStatus () {
+export function deluxeMembershipStatus () {
   return (req, res, next) => {
     if (insecurity.isCustomer(req)) {
       res.status(200).json({ status: 'success', data: { membershipCost: 49 } })

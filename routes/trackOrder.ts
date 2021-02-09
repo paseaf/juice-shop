@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const challenges = require('../data/datacache').challenges
-const db = require('../data/mongodb')
+import utils = require('../lib/utils')
+import { challenges } from '../data/datacache'
+import db = require('../data/mongodb')
 
-module.exports = function trackOrder () {
+export = function trackOrder () {
   return (req, res) => {
     const id = utils.disableOnContainerEnv() ? String(req.params.id).replace(/[^\w-]+/g, '') : req.params.id
 

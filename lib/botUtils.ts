@@ -2,11 +2,11 @@
  * Copyright (c) 2014-2021 Bjoern Kimminich.
  * SPDX-License-Identifier: MIT
  */
-const models = require('../models/index')
+import models = require('../models/index')
 const fuzz = require('fuzzball')
-const insecurity = require('./insecurity')
-const utils = require('./utils')
-const challenges = require('../data/datacache').challenges
+import insecurity = require('./insecurity')
+import utils = require('./utils')
+import { challenges } from '../data/datacache'
 
 async function productPrice (query, user) {
   const [products] = await models.sequelize.query('SELECT * FROM Products')
@@ -34,7 +34,7 @@ function testFunction (query, user) {
   }
 }
 
-module.exports = {
+export = {
   productPrice,
   couponCode,
   testFunction

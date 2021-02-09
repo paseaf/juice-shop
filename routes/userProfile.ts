@@ -4,15 +4,15 @@
  */
 
 const fs = require('fs')
-const models = require('../models/index')
-const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
-const challenges = require('../data/datacache').challenges
+import models = require('../models/index')
+import utils = require('../lib/utils')
+import insecurity = require('../lib/insecurity')
+import { challenges } from '../data/datacache'
 const pug = require('pug')
 const config = require('config')
-const themes = require('../views/themes/themes').themes
+import { themes } from '../views/themes/themes'
 
-module.exports = function getUserProfile () {
+export = function getUserProfile () {
   return (req, res, next) => {
     fs.readFile('views/userProfile.pug', function (err, buf) {
       if (err) throw err

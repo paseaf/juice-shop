@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
-const models = require('../models/index')
-const cache = require('../data/datacache')
+import utils = require('../lib/utils')
+import insecurity = require('../lib/insecurity')
+import models = require('../models/index')
+import cache = require('../data/datacache')
 const challenges = cache.challenges
 
-module.exports = function saveLoginIp () {
+export = function saveLoginIp () {
   return (req, res, next) => {
     const loggedInUser = insecurity.authenticatedUsers.from(req)
     if (loggedInUser !== undefined) {

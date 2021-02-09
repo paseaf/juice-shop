@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
-const db = require('../data/mongodb')
-const challenges = require('../data/datacache').challenges
-const models = require('../models/index')
+import utils = require('../lib/utils')
+import insecurity = require('../lib/insecurity')
+import db = require('../data/mongodb')
+import { challenges } from '../data/datacache'
+import models = require('../models/index')
 
-module.exports = function dataExport () {
+export = function dataExport () {
   return async (req, res, next) => {
     const loggedInUser = insecurity.authenticatedUsers.get(req.headers.authorization.replace('Bearer ', ''))
     if (loggedInUser && loggedInUser.data && loggedInUser.data.email && loggedInUser.data.id) {

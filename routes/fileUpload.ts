@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const challenges = require('../data/datacache').challenges
+import utils = require('../lib/utils')
+import { challenges } from '../data/datacache'
 const libxml = require('libxmljs2')
 const os = require('os')
 const vm = require('vm')
@@ -107,7 +107,7 @@ function handleXmlUpload ({ file }, res, next) {
   res.status(204).end()
 }
 
-module.exports = {
+export {
   ensureFileIsPassed,
   handleZipFileUpload,
   checkUploadSize,

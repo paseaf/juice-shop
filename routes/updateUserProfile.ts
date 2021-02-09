@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
-const insecurity = require('../lib/insecurity')
-const utils = require('../lib/utils')
-const cache = require('../data/datacache')
+import models = require('../models/index')
+import insecurity = require('../lib/insecurity')
+import utils = require('../lib/utils')
+import cache = require('../data/datacache')
 const challenges = cache.challenges
 
-module.exports = function updateUserProfile () {
+export = function updateUserProfile () {
   return (req, res, next) => {
     const loggedInUser = insecurity.authenticatedUsers.get(req.cookies.token)
 

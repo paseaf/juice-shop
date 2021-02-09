@@ -4,9 +4,9 @@
  */
 
 const svgCaptcha = require('svg-captcha')
-const models = require('../models/index')
+import models = require('../models/index')
 const Op = models.Sequelize.Op
-const insecurity = require('../lib/insecurity')
+import insecurity = require('../lib/insecurity')
 
 function imageCaptchas () {
   return (req, res) => {
@@ -45,4 +45,4 @@ imageCaptchas.verifyCaptcha = () => (req, res, next) => {
   })
 }
 
-module.exports = imageCaptchas
+export = imageCaptchas
