@@ -8,9 +8,9 @@ const expect = chai.expect
 import chaiAsPromised = require('chai-as-promised')
 chai.use(chaiAsPromised)
 
-describe('webhook', () => {
-  const webhook = require('../../lib/webhook')
+import webhook = require('../../lib/webhook')
 
+describe('webhook', () => {
   const challenge = {
     key: 'key',
     name: 'name'

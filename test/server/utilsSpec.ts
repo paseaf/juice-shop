@@ -6,9 +6,9 @@
 import chai = require('chai')
 const expect = chai.expect
 
-describe('utils', () => {
-  const utils = require('../../lib/utils')
+import utils = require('../../lib/utils')
 
+describe('utils', () => {
   describe('toSimpleIpAddress', () => {
     it('returns ipv6 address unchanged', () => {
       expect(utils.toSimpleIpAddress('2001:0db8:85a3:0000:0000:8a2e:0370:7334')).to.equal('2001:0db8:85a3:0000:0000:8a2e:0370:7334')

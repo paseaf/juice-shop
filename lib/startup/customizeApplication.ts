@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const fs = require('fs')
-const config = require('config')
-const replace = require('replace')
-const utils = require('../utils')
+import fs = require('fs')
+import config = require('config')
+import replace = require('replace')
+import utils = require('../utils')
 
 const customizeApplication = () => {
   if (config.get('application.name')) {
@@ -127,5 +127,4 @@ const customizeCookieConsentBanner = () => {
     silent: true
   })
 }
-
-module.exports = customizeApplication
+export = customizeApplication

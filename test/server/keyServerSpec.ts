@@ -9,9 +9,9 @@ import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 
-describe('keyServer', () => {
-  const serveKeyFiles = require('../../routes/keyServer')
+import serveKeyFiles = require('../../routes/keyServer')
 
+describe('keyServer', () => {
   beforeEach(() => {
     this.req = { params: { } }
     this.res = { sendFile: sinon.spy(), status: sinon.spy() }

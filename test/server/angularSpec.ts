@@ -9,9 +9,9 @@ import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 
-describe('angular', () => {
-  const serveAngularClient = require('../../routes/angular')
+import serveAngularClient = require('../../routes/angular')
 
+describe('angular', () => {
   beforeEach(() => {
     this.req = { }
     this.res = { sendFile: sinon.spy() }

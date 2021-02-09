@@ -5,10 +5,10 @@
 
 import chai = require('chai')
 const expect = chai.expect
+import z85 = require('z85')
+import insecurity = require('../../lib/insecurity')
 
 describe('insecurity', () => {
-  const insecurity = require('../../lib/insecurity')
-
   describe('cutOffPoisonNullByte', () => {
     it('returns string unchanged if it contains no null byte', () => {
       expect(insecurity.cutOffPoisonNullByte('file.exe.pdf')).to.equal('file.exe.pdf')
@@ -31,8 +31,6 @@ describe('insecurity', () => {
   })
 
   describe('generateCoupon', () => {
-    const z85 = require('z85')
-
     it('returns base85-encoded month, year and discount as coupon code', () => {
       const coupon = insecurity.generateCoupon(20, new Date('1980-01-02'))
       expect(coupon).to.equal('n<MiifFb4l')
@@ -53,8 +51,6 @@ describe('insecurity', () => {
   })
 
   describe('discountFromCoupon', () => {
-    const z85 = require('z85')
-
     it('returns undefined when not passing in a coupon code', () => {
       expect(insecurity.discountFromCoupon(undefined)).to.equal(undefined)
       expect(insecurity.discountFromCoupon(null)).to.equal(undefined)

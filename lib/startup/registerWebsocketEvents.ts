@@ -3,15 +3,16 @@
  * SPDX-License-Identifier: MIT
  */
 
-const notifications = require('../../data/datacache').notifications
-const utils = require('../utils')
-const insecurity = require('../insecurity')
-const challenges = require('../../data/datacache').challenges
-const config = require('config')
+import { notifications } from '../../data/datacache'
+import utils = require('../utils')
+import insecurity = require('../insecurity')
+import { challenges } from '../../data/datacache'
+import config = require('config')
+import socketIO = require('socket.io')
 let firstConnectedSocket = null
 
 const registerWebsocketEvents = (server) => {
-  const io = require('socket.io')(server)
+  const io = socketIO(server)
   global.io = io
 
   io.on('connection', socket => {
@@ -42,4 +43,4 @@ const registerWebsocketEvents = (server) => {
   })
 }
 
-module.exports = registerWebsocketEvents
+export = registerWebsocketEvents

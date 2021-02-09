@@ -9,10 +9,10 @@ import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 
-describe('easterEgg', () => {
-  const serveEasterEgg = require('../../routes/easterEgg')
-  const challenges = require('../../data/datacache').challenges
+import serveEasterEgg = require('../../routes/easterEgg')
+import { challenges } from '../../data/datacache'
 
+describe('easterEgg', () => {
   beforeEach(() => {
     this.res = { sendFile: sinon.spy() }
     this.req = {}

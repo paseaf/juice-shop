@@ -9,10 +9,10 @@ import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 
-describe('b2bOrder', () => {
-  const createB2bOrder = require('../../routes/b2bOrder')
-  const challenges = require('../../data/datacache').challenges
+import createB2bOrder = require('../../routes/b2bOrder')
+import { challenges } from '../../data/datacache'
 
+describe('b2bOrder', () => {
   beforeEach(() => {
     this.req = { body: { } }
     this.res = { json: sinon.spy(), status: sinon.spy() }

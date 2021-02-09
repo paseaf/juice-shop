@@ -11,10 +11,11 @@ chai.use(sinonChai)
 
 import semver = require('semver')
 import { checkIfRunningOnSupportedNodeVersion, checkIfPortIsAvailable } from '../../lib/startup/validatePreconditions'
+import { engines } from './../../package.json'
 
 describe('preconditionValidation', () => {
   describe('checkIfRunningOnSupportedNodeVersion', () => {
-    const supportedVersion = require('./../../package.json').engines.node
+    const supportedVersion = engines.node
 
     it('should define the supported semver range as 10 - 14', () => {
       expect(supportedVersion).to.equal('10 - 14')

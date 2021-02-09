@@ -9,10 +9,11 @@ import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 
-describe('redirect', () => {
-  const performRedirect = require('../../routes/redirect')
-  const challenges = require('../../data/datacache').challenges
+import performRedirect = require('../../routes/redirect')
+import { challenges } from '../../data/datacache'
+import { redirectAllowlist } from '../../lib/insecurity'
 
+describe('redirect', () => {
   beforeEach(() => {
     this.req = { query: {} }
     this.res = { redirect: sinon.spy(), status: sinon.spy() }
@@ -23,7 +24,7 @@ describe('redirect', () => {
   })
 
   describe('should be performed for all allowlisted URLs', () => {
-    for (const url of require('../../lib/insecurity').redirectAllowlist) {
+    for (const url of redirectAllowlist) {
       it(url, () => {
         this.req.query.to = url
 

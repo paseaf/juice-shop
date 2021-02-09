@@ -10,8 +10,8 @@ try {
   console.error('Please run "npm install" before starting the application!')
   process.exit(1)
 }
-const logger = require('../logger')
-const colors = require('colors/safe')
+import logger = require('../logger')
+import colors = require('colors/safe')
 
 const validateDependencies = async ({ packageDir = '.', exitOnFailure = true } = {}) => {
   let success = true
@@ -38,4 +38,4 @@ const validateDependencies = async ({ packageDir = '.', exitOnFailure = true } =
   }
 }
 
-module.exports = validateDependencies
+export = validateDependencies

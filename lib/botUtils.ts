@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 import models = require('../models/index')
-const fuzz = require('fuzzball')
+import fuzz = require('fuzzball')
 import insecurity = require('./insecurity')
 import utils = require('./utils')
 import { challenges } from '../data/datacache'
@@ -34,7 +34,7 @@ function testFunction (query, user) {
   }
 }
 
-export = {
+export {
   productPrice,
   couponCode,
   testFunction

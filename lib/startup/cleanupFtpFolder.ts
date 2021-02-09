@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const glob = require('glob')
-const path = require('path')
-const fs = require('fs-extra')
-const logger = require('../logger')
+import glob = require('glob')
+import path = require('path')
+import fs = require('fs-extra')
+import logger = require('../logger')
 
 const cleanupFtpFolder = () => {
   glob(path.join(__dirname, '../../ftp/*.pdf'), (err, files) => {
@@ -20,4 +20,4 @@ const cleanupFtpFolder = () => {
   })
 }
 
-module.exports = cleanupFtpFolder
+export = cleanupFtpFolder

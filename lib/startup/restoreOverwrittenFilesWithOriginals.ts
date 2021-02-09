@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const path = require('path')
-const fs = require('fs')
-const logger = require('../logger')
-const { promisify } = require('util')
+import path = require('path')
+import fs = require('fs')
+import logger = require('../logger')
+import { promisify } from 'util'
 const glob = promisify(require('glob'))
 const copyFile = promisify(fs.copyFile)
 const access = promisify(fs.access)
@@ -30,4 +30,4 @@ const restoreOverwrittenFilesWithOriginals = async () => {
   }
 }
 
-module.exports = restoreOverwrittenFilesWithOriginals
+export = restoreOverwrittenFilesWithOriginals

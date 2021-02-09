@@ -4,24 +4,24 @@
  */
 
 /* jslint node: true */
-const fs = require('fs')
-const colors = require('colors/safe')
-const notifications = require('../data/datacache').notifications
-const challenges = require('../data/datacache').challenges
-const packageJson = require('../package.json')
-const sanitizeHtml = require('sanitize-html')
-const jsSHA = require('jssha')
-const Entities = require('html-entities').AllHtmlEntities
-const config = require('config')
+import fs = require('fs')
+import colors = require('colors/safe')
+import { notifications } from '../data/datacache'
+import { challenges } from '../data/datacache'
+import packageJson = require('../package.json')
+import sanitizeHtml = require('sanitize-html')
+import jsSHA = require('jssha')
+import { AllHtmlEntities as Entities } from 'html-entities'
+import config = require('config')
 const entities = new Entities()
-const download = require('download')
-const crypto = require('crypto')
-const clarinet = require('clarinet')
-const isDocker = require('is-docker')
-const isHeroku = require('is-heroku')
-const isWindows = require('is-windows')
-const logger = require('../lib/logger')
-const webhook = require('../lib/webhook')
+import download = require('download')
+import crypto = require('crypto')
+import clarinet = require('clarinet')
+import isDocker = require('is-docker')
+import isHeroku = require('is-heroku')
+import isWindows = require('is-windows')
+import logger = require('../lib/logger')
+import webhook = require('../lib/webhook')
 
 const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
 

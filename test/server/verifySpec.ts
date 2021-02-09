@@ -13,10 +13,10 @@ import insecurity = require('../../lib/insecurity')
 import config = require('config')
 import utils = require('../../lib/utils')
 
-describe('verify', () => {
-  const verify = require('../../routes/verify')
-  const challenges = require('../../data/datacache').challenges
+import verify = require('../../routes/verify')
+import { challenges, products } from '../../data/datacache'
 
+describe('verify', () => {
   beforeEach(() => {
     this.req = { body: {}, headers: {} }
     this.res = { json: sinon.spy() }
@@ -203,8 +203,6 @@ describe('verify', () => {
 
   describe('databaseRelatedChallenges', () => {
     describe('"changeProductChallenge"', () => {
-      const products = require('../../data/datacache').products
-
       beforeEach(() => {
         challenges.changeProductChallenge = { solved: false, save: this.save }
         products.osaft = { reload () { return { then (cb) { cb() } } } }

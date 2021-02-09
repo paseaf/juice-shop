@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-const request = require('request')
-const { promisify } = require('util')
-const colors = require('colors/safe')
+import request = require('request')
+import { promisify } from 'util'
+import colors = require('colors/safe')
 import logger = require('../lib/logger')
 import utils = require('./utils')
-const os = require('os')
-const config = require('config')
+import os = require('os')
+import config = require('config')
 const post = promisify(request.post)
 
 export const notify = async (challenge, webhook = process.env.SOLUTIONS_WEBHOOK) => {

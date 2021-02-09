@@ -6,13 +6,10 @@
 import chai = require('chai')
 const expect = chai.expect
 
-describe('fileUpload', () => {
-  const {
-    checkUploadSize,
-    checkFileType
-  } = require('../../routes/fileUpload')
-  const challenges = require('../../data/datacache').challenges
+import { checkUploadSize, checkFileType } from '../../routes/fileUpload'
+import { challenges } from '../../data/datacache'
 
+describe('fileUpload', () => {
   beforeEach(() => {
     this.req = { file: { originalname: '' } }
     this.save = () => ({

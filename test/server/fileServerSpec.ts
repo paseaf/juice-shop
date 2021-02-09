@@ -9,10 +9,10 @@ import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 
-describe('fileServer', () => {
-  const servePublicFiles = require('../../routes/fileServer')
-  const challenges = require('../../data/datacache').challenges
+import servePublicFiles = require('../../routes/fileServer')
+import { challenges } from '../../data/datacache'
 
+describe('fileServer', () => {
   beforeEach(() => {
     this.res = { sendFile: sinon.spy(), status: sinon.spy() }
     this.req = { params: {}, query: {} }

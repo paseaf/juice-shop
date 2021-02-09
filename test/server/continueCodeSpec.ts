@@ -9,10 +9,10 @@ import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 
-describe('continueCode', () => {
-  const retrieveCurrentContinueCode = require('../../routes/continueCode')
-  const challenges = require('../../data/datacache').challenges
+import retrieveCurrentContinueCode = require('../../routes/continueCode')
+import { challenges } from '../../data/datacache'
 
+describe('continueCode', () => {
   beforeEach(() => {
     this.req = {}
     this.res = { json: sinon.spy() }

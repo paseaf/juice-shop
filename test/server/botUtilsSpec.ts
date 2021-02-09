@@ -6,10 +6,9 @@
 import chai = require('chai')
 const expect = chai.expect
 import insecurity = require('../../lib/insecurity')
+import botUtils = require('../../lib/botUtils')
 
 describe('botUtils', () => {
-  const botUtils = require('../../lib/botUtils')
-
   describe('testFunction', () => {
     it('returns static test response', () => {
       expect(botUtils.testFunction()).to.deep.equal({

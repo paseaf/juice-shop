@@ -9,9 +9,9 @@ import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 
-describe('countryMapping', () => {
-  const countryMapping = require('../../routes/countryMapping')
+import countryMapping = require('../../routes/countryMapping')
 
+describe('countryMapping', () => {
   beforeEach(() => {
     this.req = {}
     this.res = { send: sinon.spy(), status: sinon.stub().returns({ send: sinon.spy() }) }

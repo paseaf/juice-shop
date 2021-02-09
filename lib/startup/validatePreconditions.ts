@@ -3,16 +3,16 @@
  * SPDX-License-Identifier: MIT
  */
 
-const config = require('config')
-const process = require('process')
-const semver = require('semver')
-const pjson = require('./../../package.json')
-const colors = require('colors/safe')
-const logger = require('../logger')
-const portscanner = require('portscanner')
-const path = require('path')
-const fs = require('fs')
-const { promisify } = require('util')
+import config = require('config')
+import process = require('process')
+import semver = require('semver')
+import pjson = require('./../../package.json')
+import colors = require('colors/safe')
+import logger = require('../logger')
+import portscanner = require('portscanner')
+import path = require('path')
+import fs = require('fs')
+import { promisify } from 'util'
 const access = promisify(fs.access)
 
 const validatePreconditions = async ({ exitOnFailure = true } = {}) => {
@@ -110,4 +110,4 @@ validatePreconditions.checkIfRunningOnSupportedNodeVersion = checkIfRunningOnSup
 validatePreconditions.checkIfPortIsAvailable = checkIfPortIsAvailable
 validatePreconditions.checkIfRequiredFileExists = checkIfRequiredFileExists
 
-module.exports = validatePreconditions
+export = validatePreconditions

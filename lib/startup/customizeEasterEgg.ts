@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const config = require('config')
-const replace = require('replace')
-const utils = require('../utils')
+import config = require('config')
+import replace = require('replace')
+import utils = require('../utils')
 
 const customizeEasterEgg = () => {
   if (config.has('application.easterEggPlanet.overlayMap')) {
@@ -44,4 +44,4 @@ const replaceThreeJsTitleTag = () => {
   })
 }
 
-module.exports = customizeEasterEgg
+export = customizeEasterEgg

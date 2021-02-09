@@ -10,6 +10,7 @@ chai.use(sinonChai)
 
 import validateChatBot = require('../../lib/startup/validateChatBot')
 import { checkIntentWithFunctionHandlerExists } from '../../lib/startup/validateChatBot'
+import botDefaultTraningData = require('../../data/static/botDefaultTrainingData.json')
 
 describe('chatBotValidation', () => {
   describe('checkIntentWithHandlerExists', () => {
@@ -63,7 +64,7 @@ describe('chatBotValidation', () => {
   })
 
   it('should accept the default chatbot training data', () => {
-    expect(validateChatBot(require('../../data/static/botDefaultTrainingData.json'))).to.equal(true)
+    expect(validateChatBot(botDefaultTraningData)).to.equal(true)
   })
 
   it('should fail if the chatbot training data is empty', () => {
