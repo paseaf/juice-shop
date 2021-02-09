@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const frisby = require('frisby')
-const fs = require('fs')
-const path = require('path')
+import frisby = require('frisby')
+import fs = require('fs')
+import path = require('path')
 const URL = 'http://localhost:3000'
 const API_URL = 'http://localhost:3000/metrics'
 

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-const config = require('config')
-const otplib = require('otplib')
+import config = require('config')
+import otplib = require('otplib')
 
 describe('/#/login', () => {
   let email, password, rememberMeCheckbox, loginButton

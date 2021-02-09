@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const frisby = require('frisby')
+import frisby = require('frisby')
 
 describe('Required Internet resource', () => {
   describe('PasteBin paste for "Leaked Unsafe Product" challenge available', () => {

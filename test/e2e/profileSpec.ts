@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-const config = require('config')
-const utils = require('../../lib/utils')
+import config = require('config')
+import utils = require('../../lib/utils')
 
 describe('/profile', () => {
   let username, submitButton, url, setProfileImageButton

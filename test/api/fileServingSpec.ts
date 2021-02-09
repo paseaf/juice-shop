@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const frisby = require('frisby')
-const config = require('config')
-const utils = require('../../lib/utils')
+import frisby = require('frisby')
+import config = require('config')
+import utils = require('../../lib/utils')
 
 const URL = 'http://localhost:3000'
 

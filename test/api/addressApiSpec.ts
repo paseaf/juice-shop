@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const frisby = require('frisby')
+import frisby = require('frisby')
 
 const API_URL = 'http://localhost:3000/api'
 const REST_URL = 'http://localhost:3000/rest'

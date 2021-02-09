@@ -3,16 +3,20 @@
  * SPDX-License-Identifier: MIT
  */
 
-const app = require('express')()
-const server = require('http').Server(app)
-const request = require('request')
-const colors = require('colors/safe')
+import express = require('express');
+const app = express();
+import { Server } from 'http'
+const server = new Server(app)
+import request = require('request')
+import colors = require('colors/safe')
 import logger = require('./../lib/logger')
 import serverApp = require('./../server')
 
-const url = require('url')
-const originalBase = require('../protractor.conf.js').config.baseUrl
-const baseUrl = new url.URL(require('../protractor.subfolder.conf.js').config.baseUrl)
+import url = require('url')
+import protractorConf = require('../protractor.conf.js')
+const originalBase = protractorConf.config.baseUrl
+import protractorSubfolderConf = require('../protractor.subfolder.conf.js')
+const baseUrl = new url.URL(protractorSubfolderConf.config.baseUrl)
 const basePath = baseUrl.pathname
 const proxyPort = baseUrl.port
 process.env.BASE_PATH = basePath

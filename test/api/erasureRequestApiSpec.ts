@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const frisby = require('frisby')
+import frisby = require('frisby')
 
 const jsonHeader = { 'content-type': 'application/json' }
 const REST_URL = 'http://localhost:3000/rest'

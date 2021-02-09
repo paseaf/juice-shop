@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-const spawn = require('cross-spawn')
-const colors = require('colors/safe')
+import spawn = require('cross-spawn')
+import colors = require('colors/safe')
 
 let server, confName
 if (process.argv && process.argv.length >= 3 && process.argv[2] === 'subfolder') {

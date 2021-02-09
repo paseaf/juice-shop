@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: MIT
  */
 
-const frisby = require('frisby')
+import frisby = require('frisby')
 const Joi = frisby.Joi
-const utils = require('../../lib/utils')
-const insecurity = require('../../lib/insecurity')
-const config = require('config')
+import utils = require('../../lib/utils')
+import insecurity = require('../../lib/insecurity')
+import config = require('config')
 
 const tamperingProductId = ((() => {
   const products = config.get('products')

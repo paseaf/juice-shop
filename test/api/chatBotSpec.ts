@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: MIT
  */
 
-const frisby = require('frisby')
-const config = require('config')
-const { initialize, bot } = require('../../routes/chatbot')
-const fs = require('fs')
-const utils = require('../../lib/utils')
+import frisby = require('frisby')
+import config = require('config')
+import { initialize, bot } from '../../routes/chatbot'
+import fs = require('fs')
+import utils = require('../../lib/utils')
 
 const REST_URL = 'http://localhost:3000/rest/'
 let trainingData

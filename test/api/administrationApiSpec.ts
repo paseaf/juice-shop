@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const frisby = require('frisby')
+import frisby = require('frisby')
 const Joi = frisby.Joi
-const utils = require('../../lib/utils')
+import utils = require('../../lib/utils')
 
 const REST_URL = 'http://localhost:3000/rest/admin'
 

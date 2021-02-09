@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const config = require('config')
-const models = require('../../models/index.ts')
-const utils = require('../../lib/utils')
+import config = require('config')
+import models = require('../../models/index')
+import utils = require('../../lib/utils')
 
 describe('/#/register', () => {
   beforeEach(() => {
