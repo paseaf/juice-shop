@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-const chai = require('chai')
-const sinonChai = require('sinon-chai')
+import chai = require('chai')
+import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 
-const validateChatBot = require('../../lib/startup/validateChatBot')
-const { checkIntentWithFunctionHandlerExists } = require('../../lib/startup/validateChatBot')
+import validateChatBot = require('../../lib/startup/validateChatBot')
+import { checkIntentWithFunctionHandlerExists } from '../../lib/startup/validateChatBot'
 
 describe('chatBotValidation', () => {
   describe('checkIntentWithHandlerExists', () => {

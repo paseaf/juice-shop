@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const chai = require('chai')
+import chai = require('chai')
 const expect = chai.expect
-const insecurity = require('../../lib/insecurity')
+import insecurity = require('../../lib/insecurity')
 
 describe('botUtils', () => {
   const botUtils = require('../../lib/botUtils')

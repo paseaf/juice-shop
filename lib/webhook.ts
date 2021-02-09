@@ -6,13 +6,13 @@
 const request = require('request')
 const { promisify } = require('util')
 const colors = require('colors/safe')
-const logger = require('../lib/logger')
-const utils = require('./utils')
+import logger = require('../lib/logger')
+import utils = require('./utils')
 const os = require('os')
 const config = require('config')
 const post = promisify(request.post)
 
-exports.notify = async (challenge, webhook = process.env.SOLUTIONS_WEBHOOK) => {
+export const notify = async (challenge, webhook = process.env.SOLUTIONS_WEBHOOK) => {
   const res = await post(webhook, {
     json: {
       solution: {

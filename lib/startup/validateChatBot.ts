@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const config = require('config')
-const colors = require('colors/safe')
-const logger = require('../logger')
-const utils = require('../utils')
+import config = require('config')
+import colors = require('colors/safe')
+import logger = require('../logger')
+import utils = require('../utils')
 
 const validateChatBot = (trainingData, exitOnFailure = true) => {
   let success = true
@@ -43,4 +43,4 @@ const checkIntentWithFunctionHandlerExists = (trainingData, intent, handler) => 
 
 validateChatBot.checkIntentWithFunctionHandlerExists = checkIntentWithFunctionHandlerExists
 
-module.exports = validateChatBot
+export = validateChatBot

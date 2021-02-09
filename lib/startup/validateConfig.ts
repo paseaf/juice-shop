@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: MIT
  */
 
-const process = require('process')
-const config = require('config')
-const colors = require('colors/safe')
-const logger = require('../logger')
-const path = require('path')
-const validateSchema = require('yaml-schema-validator/src')
+import process = require('process')
+import config = require('config')
+import colors = require('colors/safe')
+import logger = require('../logger')
+import path = require('path')
+import validateSchema = require('yaml-schema-validator/src')
 
 const specialProducts = [
   { name: '"Christmas Special" challenge product', key: 'useForChristmasSpecialChallenge' },
@@ -169,4 +169,4 @@ validateConfig.checkUniqueSpecialOnMemories = checkUniqueSpecialOnMemories
 validateConfig.checkMinimumRequiredNumberOfMemories = checkMinimumRequiredNumberOfMemories
 validateConfig.checkSpecialMemoriesHaveNoUserAssociated = checkSpecialMemoriesHaveNoUserAssociated
 
-module.exports = validateConfig
+export = validateConfig

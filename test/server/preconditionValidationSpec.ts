@@ -3,14 +3,14 @@
  * SPDX-License-Identifier: MIT
  */
 
-const chai = require('chai')
-const sinonChai = require('sinon-chai')
+import chai = require('chai')
+import sinonChai = require('sinon-chai')
 const expect = chai.expect
-const net = require('net')
+import net = require('net')
 chai.use(sinonChai)
 
-const semver = require('semver')
-const { checkIfRunningOnSupportedNodeVersion, checkIfPortIsAvailable } = require('../../lib/startup/validatePreconditions')
+import semver = require('semver')
+import { checkIfRunningOnSupportedNodeVersion, checkIfPortIsAvailable } from '../../lib/startup/validatePreconditions'
 
 describe('preconditionValidation', () => {
   describe('checkIfRunningOnSupportedNodeVersion', () => {

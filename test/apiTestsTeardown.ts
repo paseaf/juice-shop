@@ -5,6 +5,6 @@
 
 import * as server from '../server'
 
-module.exports = async () => {
+export = async () => {
   server.close()
 }
