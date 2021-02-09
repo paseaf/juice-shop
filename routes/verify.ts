@@ -14,7 +14,7 @@ const challenges = cache.challenges
 const products = cache.products
 const config = require('config')
 
-exports.forgedFeedbackChallenge = () => (req, res, next) => {
+export const forgedFeedbackChallenge = () => (req, res, next) => {
   utils.solveIf(challenges.forgedFeedbackChallenge, () => {
     const user = insecurity.authenticatedUsers.from(req)
     const userId = user && user.data ? user.data.id : undefined
@@ -23,7 +23,7 @@ exports.forgedFeedbackChallenge = () => (req, res, next) => {
   next()
 }
 
-exports.captchaBypassChallenge = () => (req, res, next) => {
+export const captchaBypassChallenge = () => (req, res, next) => {
   if (utils.notSolved(challenges.captchaBypassChallenge)) {
     if (req.app.locals.captchaReqId >= 10) {
       if ((new Date().getTime() - req.app.locals.captchaBypassReqTimes[req.app.locals.captchaReqId - 10]) <= 10000) {
@@ -36,17 +36,17 @@ exports.captchaBypassChallenge = () => (req, res, next) => {
   next()
 }
 
-exports.registerAdminChallenge = () => (req, res, next) => {
+export const registerAdminChallenge = () => (req, res, next) => {
   utils.solveIf(challenges.registerAdminChallenge, () => { return req.body && req.body.role === insecurity.roles.admin })
   next()
 }
 
-exports.passwordRepeatChallenge = () => (req, res, next) => {
+export const passwordRepeatChallenge = () => (req, res, next) => {
   utils.solveIf(challenges.passwordRepeatChallenge, () => { return req.body && req.body.passwordRepeat !== req.body.password })
   next()
 }
 
-exports.accessControlChallenges = () => ({ url }, res, next) => {
+export const accessControlChallenges = () => ({ url }, res, next) => {
   utils.solveIf(challenges.scoreBoardChallenge, () => { return utils.endsWith(url, '/1px.png') })
   utils.solveIf(challenges.adminSectionChallenge, () => { return utils.endsWith(url, '/19px.png') })
   utils.solveIf(challenges.tokenSaleChallenge, () => { return utils.endsWith(url, '/56px.png') })
@@ -59,12 +59,12 @@ exports.accessControlChallenges = () => ({ url }, res, next) => {
   next()
 }
 
-exports.errorHandlingChallenge = () => (err, req, { statusCode }, next) => {
+export const errorHandlingChallenge = () => (err, req, { statusCode }, next) => {
   utils.solveIf(challenges.errorHandlingChallenge, () => { return err && (statusCode === 200 || statusCode > 401) })
   next(err)
 }
 
-exports.jwtChallenges = () => (req, res, next) => {
+export const jwtChallenges = () => (req, res, next) => {
   if (utils.notSolved(challenges.jwtUnsignedChallenge)) {
     jwtChallenge(challenges.jwtUnsignedChallenge, req, 'none', /jwtn3d@/)
   }
@@ -74,7 +74,7 @@ exports.jwtChallenges = () => (req, res, next) => {
   next()
 }
 
-exports.serverSideChallenges = () => (req, res, next) => {
+export const serverSideChallenges = () => (req, res, next) => {
   if (req.query.key === 'tRy_H4rd3r_n0thIng_iS_Imp0ssibl3') {
     if (utils.notSolved(challenges.sstiChallenge) && req.app.locals.abused_ssti_bug === true) {
       utils.solve(challenges.sstiChallenge)
@@ -112,7 +112,7 @@ function hasEmail (token, email) {
   return token && token.data && token.data.email && token.data.email.match(email)
 }
 
-exports.databaseRelatedChallenges = () => (req, res, next) => {
+export const databaseRelatedChallenges = () => (req, res, next) => {
   if (utils.notSolved(challenges.changeProductChallenge) && products.osaft) {
     changeProductChallenge(products.osaft)
   }

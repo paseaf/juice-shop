@@ -8,7 +8,7 @@ const insecurity = require('../lib/insecurity')
 const models = require('../models/index')
 const challenges = require('../data/datacache').challenges
 
-module.exports = function retrieveBasket () {
+export = function retrieveBasket () {
   return (req, res, next) => {
     const id = req.params.id
     models.Basket.findOne({ where: { id }, include: [{ model: models.Product, paranoid: false }] })

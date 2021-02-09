@@ -20,7 +20,7 @@ global.sleep = time => {
   }
 }
 
-module.exports = function productReviews () {
+export = function productReviews () {
   return (req, res, next) => {
     const id = utils.disableOnContainerEnv() ? Number(req.params.id) : req.params.id
 

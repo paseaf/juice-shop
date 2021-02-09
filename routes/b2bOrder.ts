@@ -9,7 +9,7 @@ const safeEval = require('notevil')
 const vm = require('vm')
 const challenges = require('../data/datacache').challenges
 
-module.exports = function b2bOrder () {
+export = function b2bOrder () {
   return ({ body }, res, next) => {
     if (!utils.disableOnContainerEnv()) {
       const orderLinesData = body.orderLinesData || ''

@@ -37,7 +37,7 @@ if (process.env.CTF_KEY !== undefined && process.env.CTF_KEY !== '') {
   })
 }
 
-exports.queryResultToJson = (data, status) => {
+export const queryResultToJson = (data, status) => {
   let wrappedData = {}
   if (data) {
     if (!data.length && data.dataValues) {
@@ -57,21 +57,21 @@ exports.queryResultToJson = (data, status) => {
   }
 }
 
-exports.startsWith = (str, prefix) => str ? str.indexOf(prefix) === 0 : false
+export const startsWith = (str, prefix) => str ? str.indexOf(prefix) === 0 : false
 
-exports.endsWith = (str, suffix) => str ? str.indexOf(suffix, str.length - suffix.length) !== -1 : false
+export const endsWith = (str, suffix) => str ? str.indexOf(suffix, str.length - suffix.length) !== -1 : false
 
-exports.contains = (str, element) => str ? str.includes(element) : false
+export const contains = (str, element) => str ? str.includes(element) : false
 
-exports.containsEscaped = function (str, element) {
+export const containsEscaped = function (str, element) {
   return this.contains(str, element.replace(/"/g, '\\"'))
 }
 
-exports.containsOrEscaped = function (str, element) {
+export const containsOrEscaped = function (str, element) {
   return this.contains(str, element) || this.containsEscaped(str, element)
 }
 
-exports.unquote = function (str) {
+export const unquote = function (str) {
   if (str && this.startsWith(str, '"') && this.endsWith(str, '"')) {
     return str.substring(1, str.length - 1)
   } else {
@@ -79,12 +79,12 @@ exports.unquote = function (str) {
   }
 }
 
-exports.trunc = function (str, length) {
+export const trunc = function (str, length) {
   str = str.replace(/(\r\n|\n|\r)/gm, '')
   return (str.length > length) ? str.substr(0, length - 1) + '...' : str
 }
 
-exports.version = module => {
+export const version = module => {
   if (module) {
     return packageJson.dependencies[module]
   } else {
@@ -92,20 +92,20 @@ exports.version = module => {
   }
 }
 
-exports.ctfFlag = text => {
+export const ctfFlag = text => {
   const shaObj = new jsSHA('SHA-1', 'TEXT') // eslint-disable-line new-cap
   shaObj.setHMACKey(ctfKey, 'TEXT')
   shaObj.update(text)
   return shaObj.getHMAC('HEX')
 }
 
-exports.solveIf = function (challenge, criteria, isRestore) {
+export const solveIf = function (challenge, criteria, isRestore) {
   if (this.notSolved(challenge) && criteria()) {
     this.solve(challenge, isRestore)
   }
 }
 
-exports.solve = function (challenge, isRestore) {
+export const solve = function (challenge, isRestore) {
   const self = this
   challenge.solved = true
   challenge.save().then(solvedChallenge => {
@@ -123,7 +123,7 @@ exports.solve = function (challenge, isRestore) {
   })
 }
 
-exports.sendNotification = function (challenge, isRestore) {
+export const sendNotification = function (challenge, isRestore) {
   if (!this.notSolved(challenge)) {
     const flag = this.ctfFlag(challenge.name)
     const notification = {
@@ -143,9 +143,9 @@ exports.sendNotification = function (challenge, isRestore) {
   }
 }
 
-exports.notSolved = challenge => challenge && !challenge.solved
+export const notSolved = challenge => challenge && !challenge.solved
 
-exports.findChallenge = challengeName => {
+export const findChallenge = challengeName => {
   for (const name in challenges) {
     if (Object.prototype.hasOwnProperty.call(challenges, name)) {
       if (challenges[name].name === challengeName) {
@@ -156,13 +156,13 @@ exports.findChallenge = challengeName => {
   logger.warn('Missing challenge with name: ' + challengeName)
 }
 
-exports.toMMMYY = date => {
+export const toMMMYY = date => {
   const month = date.getMonth()
   const year = date.getFullYear()
   return months[month] + year.toString().substring(2, 4)
 }
 
-exports.toISO8601 = date => {
+export const toISO8601 = date => {
   let day = '' + date.getDate()
   let month = '' + (date.getMonth() + 1)
   const year = date.getFullYear()
@@ -173,7 +173,7 @@ exports.toISO8601 = date => {
   return [year, month, day].join('-')
 }
 
-exports.extractFilename = (url) => {
+export const extractFilename = (url) => {
   let file = decodeURIComponent(url.substring(url.lastIndexOf('/') + 1))
   if (this.contains(file, '?')) {
     file = file.substring(0, file.indexOf('?'))
@@ -181,7 +181,7 @@ exports.extractFilename = (url) => {
   return file
 }
 
-exports.downloadToFile = async (url, dest) => {
+export const downloadToFile = async (url, dest) => {
   return download(url).then(data => {
     fs.writeFileSync(dest, data)
   }).catch(err => {
@@ -189,7 +189,7 @@ exports.downloadToFile = async (url, dest) => {
   })
 }
 
-exports.jwtFrom = ({ headers }) => {
+export const jwtFrom = ({ headers }) => {
   if (headers && headers.authorization) {
     const parts = headers.authorization.split(' ')
     if (parts.length === 2) {
@@ -204,19 +204,19 @@ exports.jwtFrom = ({ headers }) => {
   return undefined
 }
 
-exports.randomHexString = (length) => {
+export const randomHexString = (length) => {
   return crypto.randomBytes(Math.ceil(length / 2)).toString('hex').slice(0, length)
 }
 
-exports.disableOnContainerEnv = () => {
+export const disableOnContainerEnv = () => {
   return (isDocker() || isHeroku) && !config.get('challenges.safetyOverride')
 }
 
-exports.disableOnWindowsEnv = () => {
+export const disableOnWindowsEnv = () => {
   return isWindows()
 }
 
-exports.determineDisabledEnv = (disabledEnv) => {
+export const determineDisabledEnv = (disabledEnv) => {
   if (isDocker()) {
     return disabledEnv && (disabledEnv === 'Docker' || disabledEnv.includes('Docker')) ? 'Docker' : null
   } else if (isHeroku) {
@@ -227,7 +227,7 @@ exports.determineDisabledEnv = (disabledEnv) => {
   return null
 }
 
-exports.parseJsonCustom = (jsonString) => {
+export const parseJsonCustom = (jsonString) => {
   const parser = clarinet.parser()
   const result = []
   parser.onkey = parser.onopenobject = k => {
@@ -240,7 +240,7 @@ exports.parseJsonCustom = (jsonString) => {
   return result
 }
 
-exports.toSimpleIpAddress = (ipv6) => {
+export const toSimpleIpAddress = (ipv6) => {
   if (this.startsWith(ipv6, '::ffff:')) {
     return ipv6.substr(7)
   } else if (ipv6 === '::1') {
@@ -250,6 +250,6 @@ exports.toSimpleIpAddress = (ipv6) => {
   }
 }
 
-exports.thaw = (frozenObject) => {
+export const thaw = (frozenObject) => {
   return JSON.parse(JSON.stringify(frozenObject))
 }

@@ -6,7 +6,7 @@
 const models = require('../models/index')
 const utils = require('../lib/utils')
 
-exports.sequelizeVulnerabilityChallenge = () => (req, res) => {
+export const sequelizeVulnerabilityChallenge = () => (req, res) => {
   models.Recycle.findAll({
     where: {
       id: JSON.parse(req.params.id)
@@ -16,7 +16,7 @@ exports.sequelizeVulnerabilityChallenge = () => (req, res) => {
   })
 }
 
-exports.blockRecycleItems = () => (req, res) => {
+export const blockRecycleItems = () => (req, res) => {
   const errMsg = { err: 'Sorry, this endpoint is not supported.' }
   return res.send(utils.queryResultToJson(errMsg))
 }

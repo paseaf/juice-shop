@@ -8,7 +8,7 @@ const utils = require('../lib/utils')
 const cache = require('../data/datacache')
 const challenges = cache.challenges
 
-module.exports = function retrieveLoggedInUser () {
+export = function retrieveLoggedInUser () {
   return (req, res) => {
     let user
     try {

@@ -8,7 +8,7 @@ const hashids = new Hashids('this is my salt', 60, 'abcdefghijklmnopqrstuvwxyzAB
 const challenges = require('../data/datacache').challenges
 const utils = require('../lib/utils')
 
-module.exports = function restoreProgress () {
+export = function restoreProgress () {
   return ({ params }, res) => {
     const continueCode = params.continueCode
     const ids = hashids.decode(continueCode)

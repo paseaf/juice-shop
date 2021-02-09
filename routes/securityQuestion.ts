@@ -5,7 +5,7 @@
 
 const models = require('../models/index')
 
-module.exports = function securityQuestion () {
+export = function securityQuestion () {
   return ({ query }, res, next) => {
     const email = query.email
     models.SecurityAnswer.findOne({

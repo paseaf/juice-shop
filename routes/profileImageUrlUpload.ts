@@ -9,7 +9,7 @@ const insecurity = require('../lib/insecurity')
 const request = require('request')
 const logger = require('../lib/logger')
 
-module.exports = function profileImageUrlUpload () {
+export = function profileImageUrlUpload () {
   return (req, res, next) => {
     if (req.body.imageUrl !== undefined) {
       const url = req.body.imageUrl

@@ -9,7 +9,7 @@ const models = require('../models/index')
 const cache = require('../data/datacache')
 const challenges = cache.challenges
 
-module.exports = function changePassword () {
+export = function changePassword () {
   return ({ query, headers, connection }, res, next) => {
     const currentPassword = query.current
     const newPassword = query.new

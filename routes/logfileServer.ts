@@ -5,7 +5,7 @@
 
 const path = require('path')
 
-module.exports = function serveLogFiles () {
+export = function serveLogFiles () {
   return ({ params }, res, next) => {
     const file = params.file
 

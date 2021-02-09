@@ -28,7 +28,7 @@ function loadStaticData (file) {
     .catch(() => logger.error('Could not open file: "' + filePath + '"'))
 }
 
-module.exports = async () => {
+export = async () => {
   const creators = [
     createSecurityQuestions,
     createUsers,

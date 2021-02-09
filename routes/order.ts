@@ -14,7 +14,7 @@ const challenges = require('../data/datacache').challenges
 const config = require('config')
 const db = require('../data/mongodb')
 
-module.exports = function placeOrder () {
+export = function placeOrder () {
   return (req, res, next) => {
     const id = req.params.id
     models.Basket.findOne({ where: { id }, include: [{ model: models.Product, paranoid: false }] })

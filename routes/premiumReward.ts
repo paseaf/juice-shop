@@ -7,7 +7,7 @@ const path = require('path')
 const utils = require('../lib/utils')
 const challenges = require('../data/datacache').challenges
 
-module.exports = function servePremiumContent () {
+export = function servePremiumContent () {
   return (req, res) => {
     utils.solveIf(challenges.premiumPaywallChallenge, () => { return true })
     res.sendFile(path.resolve(__dirname, '../frontend/dist/frontend/assets/private/JuiceShop_Wallpaper_1920x1080_VR.jpg'))

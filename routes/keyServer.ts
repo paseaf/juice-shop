@@ -5,7 +5,7 @@
 
 const path = require('path')
 
-module.exports = function serveKeyFiles () {
+export = function serveKeyFiles () {
   return ({ params }, res, next) => {
     const file = params.file
 

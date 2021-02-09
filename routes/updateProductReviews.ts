@@ -8,7 +8,7 @@ const challenges = require('../data/datacache').challenges
 const db = require('../data/mongodb')
 const insecurity = require('../lib/insecurity')
 
-module.exports = function productReviews () {
+export = function productReviews () {
   return (req, res, next) => {
     const user = insecurity.authenticatedUsers.from(req)
     db.reviews.update(

@@ -5,7 +5,7 @@
 
 const winston = require('winston')
 
-module.exports = winston.createLogger({
+export = winston.createLogger({
   transports: [
     new winston.transports.Console({ level: process.env.NODE_ENV === 'test' ? 'error' : 'info' })
   ],

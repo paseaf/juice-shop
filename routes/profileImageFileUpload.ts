@@ -10,7 +10,7 @@ const insecurity = require('../lib/insecurity')
 const logger = require('../lib/logger')
 const fileType = require('file-type')
 
-module.exports = function fileUpload () {
+export = function fileUpload () {
   return async (req, res, next) => {
     const file = req.file
     const buffer = file.buffer

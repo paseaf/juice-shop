@@ -5,7 +5,7 @@
 
 const path = require('path')
 
-module.exports = function serveQuarantineFiles () {
+export = function serveQuarantineFiles () {
   return ({ params, query }, res, next) => {
     const file = params.file
 

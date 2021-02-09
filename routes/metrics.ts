@@ -27,7 +27,7 @@ const fileUploadErrorsMetric = new Prometheus.Counter({
   labelNames: ['file_type']
 })
 
-exports.observeRequestMetricsMiddleware = function observeRequestMetricsMiddleware () {
+export function observeRequestMetricsMiddleware () {
   const httpRequestsMetric = new Prometheus.Counter({
     name: 'http_requests_count',
     help: 'Total HTTP request count grouped by status code.',
@@ -43,7 +43,7 @@ exports.observeRequestMetricsMiddleware = function observeRequestMetricsMiddlewa
   }
 }
 
-exports.observeFileUploadMetricsMiddleware = function observeFileUploadMetricsMiddleware () {
+export function observeFileUploadMetricsMiddleware () {
   return ({ file }, res, next) => {
     onFinished(res, () => {
       if (file) {
@@ -54,7 +54,7 @@ exports.observeFileUploadMetricsMiddleware = function observeFileUploadMetricsMi
   }
 }
 
-exports.serveMetrics = function serveMetrics () {
+export function serveMetrics () {
   return (req, res, next) => {
     utils.solveIf(challenges.exposedMetricsChallenge, () => {
       const userAgent = req.headers['user-agent'] || ''
@@ -65,7 +65,7 @@ exports.serveMetrics = function serveMetrics () {
   }
 }
 
-exports.observeMetrics = function observeMetrics () {
+export function observeMetrics () {
   const app = config.get('application.customMetricsPrefix')
   const intervalCollector = Prometheus.collectDefaultMetrics({ timeout: 5000 })
   register.setDefaultLabels({ app })

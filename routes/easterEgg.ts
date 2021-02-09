@@ -7,7 +7,7 @@ const path = require('path')
 const utils = require('../lib/utils')
 const challenges = require('../data/datacache').challenges
 
-module.exports = function serveEasterEgg () {
+export = function serveEasterEgg () {
   return (req, res) => {
     utils.solveIf(challenges.easterEggLevelTwoChallenge, () => { return true })
     res.sendFile(path.resolve(__dirname, '../frontend/dist/frontend/assets/private/threejs-demo.html'))
