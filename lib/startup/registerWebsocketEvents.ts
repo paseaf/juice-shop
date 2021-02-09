@@ -3,10 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { notifications } from '../../data/datacache'
+import { notifications, challenges } from '../../data/datacache'
 import utils = require('../utils')
 import insecurity = require('../insecurity')
-import { challenges } from '../../data/datacache'
 import config = require('config')
 import socketIO = require('socket.io')
 let firstConnectedSocket = null

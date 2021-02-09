@@ -27,7 +27,7 @@ export function allOrders () {
   }
 }
 
-module.exports.toggleDeliveryStatus = function toggleDeliveryStatus () {
+export function toggleDeliveryStatus () {
   return async (req, res, next) => {
     const deliveryStatus = !req.body.deliveryStatus
     const eta = deliveryStatus ? '0' : '1'

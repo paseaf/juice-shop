@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const models = require('../models/index')
-const challenges = require('../data/datacache').challenges
+import utils = require('../lib/utils')
+import models = require('../models/index')
+import { challenges } from '../data/datacache'
 
 export = function searchProducts () {
   return (req, res, next) => {

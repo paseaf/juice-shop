@@ -6,8 +6,7 @@
 /* jslint node: true */
 import fs = require('fs')
 import colors = require('colors/safe')
-import { notifications } from '../data/datacache'
-import { challenges } from '../data/datacache'
+import { notifications, challenges } from '../data/datacache'
 import packageJson = require('../package.json')
 import sanitizeHtml = require('sanitize-html')
 import jsSHA = require('jssha')

@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
-const models = require('../models/index')
-const challenges = require('../data/datacache').challenges
+import utils = require('../lib/utils')
+import insecurity = require('../lib/insecurity')
+import models = require('../models/index')
+import { challenges } from '../data/datacache'
 
 export = function retrieveBasket () {
   return (req, res, next) => {

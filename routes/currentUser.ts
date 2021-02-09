@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const insecurity = require('../lib/insecurity')
-const utils = require('../lib/utils')
-const cache = require('../data/datacache')
+import insecurity = require('../lib/insecurity')
+import utils = require('../lib/utils')
+import cache = require('../data/datacache')
 const challenges = cache.challenges
 
 export = function retrieveLoggedInUser () {

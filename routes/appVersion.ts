@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const config = require('config')
+import utils = require('../lib/utils')
+import config = require('config')
 
 export = function retrieveAppVersion () {
   return (req, res) => {

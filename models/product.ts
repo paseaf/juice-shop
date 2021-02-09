@@ -4,11 +4,11 @@
  */
 
 /* jslint node: true */
-const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
-const challenges = require('../data/datacache').challenges
+import utils = require('../lib/utils')
+import insecurity = require('../lib/insecurity')
+import { challenges } from '../data/datacache'
 
-module.exports = (sequelize, { STRING, DECIMAL }) => {
+export = (sequelize, { STRING, DECIMAL }) => {
   const Product = sequelize.define('Product', {
     name: STRING,
     description: {

@@ -3,16 +3,15 @@
  * SPDX-License-Identifier: MIT
  */
 
-const path = require('path')
-const fs = require('fs')
-const PDFDocument = require('pdfkit')
-const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
-const models = require('../models/index')
-const products = require('../data/datacache').products
-const challenges = require('../data/datacache').challenges
-const config = require('config')
-const db = require('../data/mongodb')
+import path = require('path')
+import fs = require('fs')
+import PDFDocument = require('pdfkit')
+import utils = require('../lib/utils')
+import insecurity = require('../lib/insecurity')
+import models = require('../models/index')
+import { products, challenges } from '../data/datacache'
+import config = require('config')
+import db = require('../data/mongodb')
 
 export = function placeOrder () {
   return (req, res, next) => {

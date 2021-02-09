@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
-const challenges = require('../data/datacache').challenges
+import utils = require('../lib/utils')
+import insecurity = require('../lib/insecurity')
+import { challenges } from '../data/datacache'
 
 export = function performRedirect () {
   return ({ query }, res, next) => {

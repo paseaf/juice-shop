@@ -4,12 +4,12 @@
  */
 
 /* jslint node: true */
-const insecurity = require('../lib/insecurity')
-const utils = require('../lib/utils')
-const challenges = require('../data/datacache').challenges
-const config = require('config')
+import insecurity = require('../lib/insecurity')
+import utils = require('../lib/utils')
+import { challenges } from '../data/datacache'
+import config = require('config')
 
-module.exports = (sequelize, { STRING, BOOLEAN }) => {
+export = (sequelize, { STRING, BOOLEAN }) => {
   const User = sequelize.define('User', {
     username: {
       type: STRING,

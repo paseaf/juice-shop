@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const path = require('path')
-const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
-const challenges = require('../data/datacache').challenges
+import path = require('path')
+import utils = require('../lib/utils')
+import insecurity = require('../lib/insecurity')
+import { challenges } from '../data/datacache'
 
 export = function servePublicFiles () {
   return ({ params, query }, res, next) => {

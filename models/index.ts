@@ -4,10 +4,10 @@
  */
 
 /* jslint node: true */
-const fs = require('fs')
-const path = require('path')
-const sequelizeNoUpdateAttributes = require('sequelize-notupdate-attributes')
-const Sequelize = require('sequelize')
+import fs = require('fs')
+import path = require('path')
+import sequelizeNoUpdateAttributes = require('sequelize-notupdate-attributes')
+import Sequelize = require('sequelize')
 const sequelize = new Sequelize('database', 'username', 'password', {
   dialect: 'sqlite',
   retry: {

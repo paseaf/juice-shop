@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const challenges = require('../data/datacache').challenges
-const insecurity = require('../lib/insecurity')
-const db = require('../data/mongodb')
+import utils = require('../lib/utils')
+import { challenges } from '../data/datacache'
+import insecurity = require('../lib/insecurity')
+import db = require('../data/mongodb')
 
 // Blocking sleep function as in native MongoDB
 global.sleep = time => {

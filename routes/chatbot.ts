@@ -3,14 +3,14 @@
  * SPDX-License-Identifier: MIT
  */
 
-const { Bot } = require('juicy-chat-bot')
+import { Bot } from 'juicy-chat-bot'
 import insecurity = require('../lib/insecurity')
-const jwt = require('jsonwebtoken')
+import jwt = require('jsonwebtoken')
 import utils = require('../lib/utils')
 import botUtils = require('../lib/botUtils')
-const config = require('config')
-const fs = require('fs')
-const download = require('download')
+import config = require('config')
+import fs = require('fs')
+import download = require('download')
 import models = require('../models/index')
 import { challenges } from '../data/datacache'
 

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const fs = require('fs')
-const models = require('../models/index')
-const insecurity = require('../lib/insecurity')
-const logger = require('../lib/logger')
-const fileType = require('file-type')
+import utils = require('../lib/utils')
+import fs = require('fs')
+import models = require('../models/index')
+import insecurity = require('../lib/insecurity')
+import logger = require('../lib/logger')
+import fileType = require('file-type')
 
 export = function fileUpload () {
   return async (req, res, next) => {

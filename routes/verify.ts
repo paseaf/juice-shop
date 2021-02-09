@@ -3,16 +3,16 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
-const jwt = require('jsonwebtoken')
-const jws = require('jws')
-const models = require('../models/index')
-const cache = require('../data/datacache')
+import utils = require('../lib/utils')
+import insecurity = require('../lib/insecurity')
+import jwt = require('jsonwebtoken')
+import jws = require('jws')
+import models = require('../models/index')
+import cache = require('../data/datacache')
 const Op = models.Sequelize.Op
 const challenges = cache.challenges
 const products = cache.products
-const config = require('config')
+import config = require('config')
 
 export const forgedFeedbackChallenge = () => (req, res, next) => {
   utils.solveIf(challenges.forgedFeedbackChallenge, () => {

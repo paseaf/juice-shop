@@ -5,10 +5,10 @@
 
 import insecurity = require('../lib/insecurity')
 import models = require('../models/index')
-const otplib = require('otplib')
+import otplib = require('otplib')
 import utils = require('../lib/utils')
 import { challenges } from '../data/datacache'
-const config = require('config')
+import config = require('config')
 
 otplib.authenticator.options = {
   // Accepts tokens as valid even when they are 30sec to old or to new

@@ -4,11 +4,11 @@
  */
 
 /* jslint node: true */
-const insecurity = require('../lib/insecurity')
-const utils = require('../lib/utils')
-const challenges = require('../data/datacache').challenges
+import insecurity = require('../lib/insecurity')
+import utils = require('../lib/utils')
+import { challenges } from '../data/datacache'
 
-module.exports = (sequelize, { STRING, INTEGER }) => {
+export = (sequelize, { STRING, INTEGER }) => {
   const Feedback = sequelize.define('Feedback', {
     comment: {
       type: STRING,

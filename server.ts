@@ -3,26 +3,26 @@
  * SPDX-License-Identifier: MIT
  */
 const startTime = Date.now()
-const path = require('path')
-const fs = require('fs')
-const morgan = require('morgan')
-const colors = require('colors/safe')
-const finale = require('finale-rest')
-const express = require('express')
-const compression = require('compression')
-const helmet = require('helmet')
-const featurePolicy = require('feature-policy')
-const errorhandler = require('errorhandler')
-const cookieParser = require('cookie-parser')
-const serveIndex = require('serve-index')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const securityTxt = require('express-security.txt')
-const robots = require('express-robots-txt')
-const yaml = require('js-yaml')
-const swaggerUi = require('swagger-ui-express')
-const RateLimit = require('express-rate-limit')
-const client = require('prom-client')
+import path = require('path')
+import fs = require('fs')
+import morgan = require('morgan')
+import colors = require('colors/safe')
+import finale = require('finale-rest')
+import express = require('express')
+import compression = require('compression')
+import helmet = require('helmet')
+import featurePolicy = require('feature-policy')
+import errorhandler = require('errorhandler')
+import cookieParser = require('cookie-parser')
+import serveIndex = require('serve-index')
+import bodyParser = require('body-parser')
+import cors = require('cors')
+import securityTxt = require('express-security.txt')
+import robots = require('express-robots-txt')
+import yaml = require('js-yaml')
+import swaggerUi = require('swagger-ui-express')
+import RateLimit = require('express-rate-limit')
+import client = require('prom-client')
 const swaggerDocument = yaml.load(fs.readFileSync('./swagger.yml', 'utf8'))
 import {
   ensureFileIsPassed,
@@ -70,7 +70,8 @@ import insecurity = require('./lib/insecurity')
 import models = require('./models')
 import datacreator = require('./data/datacreator')
 const app = express()
-const server = require('http').Server(app)
+import http = require('http')
+const server = new http.Server(app)
 import appConfiguration = require('./routes/appConfiguration')
 import captcha = require('./routes/captcha')
 import trackOrder = require('./routes/trackOrder')
@@ -95,7 +96,7 @@ import deluxe = require('./routes/deluxe')
 import memory = require('./routes/memory')
 import chatbot = require('./routes/chatbot')
 import locales = require('./data/static/locales.json')
-const i18n = require('i18n')
+import i18n = require('i18n')
 
 const appName = config.get('application.customMetricsPrefix')
 const startupGauge = new client.Gauge({
@@ -118,7 +119,7 @@ collectDurationPromise('restoreOverwrittenFilesWithOriginals', require('./lib/st
 collectDurationPromise('cleanupFtpFolder', require('./lib/startup/cleanupFtpFolder'))()
 collectDurationPromise('validateConfig', require('./lib/startup/validateConfig'))()
 
-const multer = require('multer')
+import multer = require('multer')
 const uploadToMemory = multer({ storage: multer.memoryStorage(), limits: { fileSize: 200000 } })
 const mimeTypeMap = {
   'image/png': 'png',
@@ -278,7 +279,8 @@ app.use(function jsonParser (req, res, next) {
   next()
 })
 /* HTTP request logging */
-const accessLogStream = require('file-stream-rotator').getStream({
+import fileStreamRotator = require('file-stream-rotator')
+const accessLogStream = fileStreamRotator.getStream({
   filename: './logs/access.log',
   frequency: 'daily',
   verbose: false,

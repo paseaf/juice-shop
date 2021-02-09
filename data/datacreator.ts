@@ -4,19 +4,19 @@
  */
 
 /* jslint node: true */
-const models = require('../models/index')
-const datacache = require('./datacache')
-const config = require('config')
-const utils = require('../lib/utils')
-const mongodb = require('./mongodb')
-const insecurity = require('../lib/insecurity')
-const logger = require('../lib/logger')
+import models = require('../models/index')
+import datacache = require('./datacache')
+import config = require('config')
+import utils = require('../lib/utils')
+import mongodb = require('./mongodb')
+import insecurity = require('../lib/insecurity')
+import logger = require('../lib/logger')
 
-const fs = require('fs')
-const path = require('path')
-const util = require('util')
-const { safeLoad } = require('js-yaml')
-const Entities = require('html-entities').AllHtmlEntities
+import fs = require('fs')
+import path = require('path')
+import util = require('util')
+import { safeLoad } from 'js-yaml'
+import {AllHtmlEntities as Entities} from "html-entities"
 const entities = new Entities()
 
 const readFile = util.promisify(fs.readFile)

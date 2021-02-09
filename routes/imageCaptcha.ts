@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const svgCaptcha = require('svg-captcha')
+import svgCaptcha = require('svg-captcha')
 import models = require('../models/index')
 const Op = models.Sequelize.Op
 import insecurity = require('../lib/insecurity')

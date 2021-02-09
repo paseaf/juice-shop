@@ -3,14 +3,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-const Prometheus = require('prom-client')
-const onFinished = require('on-finished')
-const orders = require('../data/mongodb').orders
-const reviews = require('../data/mongodb').reviews
-const challenges = require('../data/datacache').challenges
-const utils = require('../lib/utils')
-const config = require('config')
-const models = require('../models')
+import Prometheus = require('prom-client')
+import onFinished = require('on-finished')
+import { orders, reviews } from '../data/mongodb'
+import { challenges } from '../data/datacache'
+import utils = require('../lib/utils')
+import config = require('config')
+import models = require('../models')
 const Op = models.Sequelize.Op
 
 const register = Prometheus.register

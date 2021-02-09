@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: MIT
  */
 
-const fs = require('fs')
-const models = require('../models/index')
-const insecurity = require('../lib/insecurity')
-const request = require('request')
-const logger = require('../lib/logger')
+import fs = require('fs')
+import models = require('../models/index')
+import insecurity = require('../lib/insecurity')
+import request = require('request')
+import logger = require('../lib/logger')
 
 export = function profileImageUrlUpload () {
   return (req, res, next) => {

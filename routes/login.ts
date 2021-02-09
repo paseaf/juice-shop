@@ -3,12 +3,11 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
-const models = require('../models/index')
-const challenges = require('../data/datacache').challenges
-const users = require('../data/datacache').users
-const config = require('config')
+import utils = require('../lib/utils')
+import insecurity = require('../lib/insecurity')
+import models = require('../models/index')
+import { challenges, users } from '../data/datacache'
+import config = require('config')
 
 export = function login () {
   function afterLogin (user, res, next) {

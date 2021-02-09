@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-const fs = require('fs')
+import fs = require('fs')
 import models = require('../models/index')
 import utils = require('../lib/utils')
 import insecurity = require('../lib/insecurity')
 import { challenges } from '../data/datacache'
-const pug = require('pug')
-const config = require('config')
+import pug = require('pug')
+import config = require('config')
 import { themes } from '../views/themes/themes'
 
 export = function getUserProfile () {

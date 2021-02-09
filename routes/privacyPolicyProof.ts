@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const path = require('path')
-const utils = require('../lib/utils')
-const challenges = require('../data/datacache').challenges
+import path = require('path')
+import utils = require('../lib/utils')
+import { challenges } from '../data/datacache'
 
 export = function servePrivacyPolicyProof () {
   return (req, res) => {

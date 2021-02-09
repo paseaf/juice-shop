@@ -5,12 +5,12 @@
 
 import utils = require('../lib/utils')
 import { challenges } from '../data/datacache'
-const libxml = require('libxmljs2')
-const os = require('os')
-const vm = require('vm')
-const fs = require('fs')
-const unzipper = require('unzipper')
-const path = require('path')
+import libxml = require('libxmljs2')
+import os = require('os')
+import vm = require('vm')
+import fs = require('fs')
+import unzipper = require('unzipper')
+import path = require('path')
 
 function matchesSystemIniFile (text) {
   const match = text.match(/(; for 16-bit app support|drivers|mci|driver32|386enh|keyboard|boot|display)/gi)

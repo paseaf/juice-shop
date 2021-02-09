@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const fs = require('fs')
-const pug = require('pug')
-const config = require('config')
+import fs = require('fs')
+import pug = require('pug')
+import config = require('config')
 import { challenges } from '../data/datacache'
 import utils = require('../lib/utils')
 import { themes } from '../views/themes/themes'

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-const path = require('path')
-const utils = require('../lib/utils')
+import path = require('path')
+import utils = require('../lib/utils')
 
 export = function serveAngularClient () {
   return ({ url }, res, next) => {

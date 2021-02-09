@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const fs = require('fs')
+import fs = require('fs')
 import locales = require('../data/static/locales.json')
 
 export = function getLanguageList () { // TODO Refactor and extend to also load backend translations from /i18n/*json and calculate joint percentage/gauge

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
-const utils = require('../lib/utils')
+import models = require('../models/index')
+import utils = require('../lib/utils')
 
 export const sequelizeVulnerabilityChallenge = () => (req, res) => {
   models.Recycle.findAll({
