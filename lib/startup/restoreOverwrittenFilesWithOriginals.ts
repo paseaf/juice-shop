@@ -7,7 +7,8 @@ import path = require('path')
 import fs = require('fs')
 import logger = require('../logger')
 import { promisify } from 'util'
-const glob = promisify(require('glob'))
+import globUnpromisified = require('glob')
+const glob = promisify(globUnpromisified)
 const copyFile = promisify(fs.copyFile)
 const access = promisify(fs.access)
 

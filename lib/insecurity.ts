@@ -8,8 +8,12 @@ import crypto = require('crypto')
 import expressJwt = require('express-jwt')
 import jwt = require('jsonwebtoken')
 import jws = require('jws')
-export const npmSanitizeHtml = require('sanitize-html')
-export const npmSanitizeFilename = require('sanitize-filename')
+import npmSanitizeHtml = require('sanitize-html')
+import npmSanitizeFilename = require('sanitize-filename')
+export {
+  npmSanitizeHtml,
+  npmSanitizeFilename
+}
 import z85 = require('z85')
 import utils = require('./utils')
 import fs = require('fs')

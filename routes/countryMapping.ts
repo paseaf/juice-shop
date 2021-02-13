@@ -4,8 +4,9 @@
  */
 
 import logger = require('../lib/logger')
+import configModule = require('config')
 
-export = function countryMapping (config = require('config')) {
+export = function countryMapping (config = configModule) {
   return (req, res) => {
     try {
       const countryMapping = config.get('ctf.countryMapping')

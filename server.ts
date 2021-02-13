@@ -83,7 +83,7 @@ import updateUserProfile = require('./routes/updateUserProfile')
 import videoHandler = require('./routes/videoHandler')
 import twoFactorAuth = require('./routes/2fa')
 import languageList = require('./routes/languages')
-const config = require('config')
+import config = require('config')
 import imageCaptcha = require('./routes/imageCaptcha')
 import dataExport = require('./routes/dataExport')
 import address = require('./routes/address')
@@ -114,10 +114,15 @@ const collectDurationPromise = (name, func) => {
     return res
   }
 }
-collectDurationPromise('validatePreconditions', require('./lib/startup/validatePreconditions'))()
-collectDurationPromise('restoreOverwrittenFilesWithOriginals', require('./lib/startup/restoreOverwrittenFilesWithOriginals'))()
-collectDurationPromise('cleanupFtpFolder', require('./lib/startup/cleanupFtpFolder'))()
-collectDurationPromise('validateConfig', require('./lib/startup/validateConfig'))()
+import validatePreconditions = require('./lib/startup/validatePreconditions')
+import restoreOverwrittenFilesWithOriginals = require('./lib/startup/restoreOverwrittenFilesWithOriginals')
+import cleanupFtpFolder = require('./lib/startup/cleanupFtpFolder')
+import validateConfig = require('./lib/startup/validateConfig')
+
+collectDurationPromise('validatePreconditions', validatePreconditions)()
+collectDurationPromise('restoreOverwrittenFilesWithOriginals', restoreOverwrittenFilesWithOriginals)()
+collectDurationPromise('cleanupFtpFolder', cleanupFtpFolder)()
+collectDurationPromise('validateConfig', validateConfig)()
 
 import multer = require('multer')
 const uploadToMemory = multer({ storage: multer.memoryStorage(), limits: { fileSize: 200000 } })
@@ -580,6 +585,9 @@ app.use(angular())
 app.use(verify.errorHandlingChallenge())
 app.use(errorhandler())
 
+import registerWebsocketEvents = require('./lib/startup/registerWebsocketEvents')
+import customizeApplication = require('./lib/startup/customizeApplication')
+import customizeEasterEgg = require('./lib/startup/customizeEasterEgg')
 export async function start (readyCallback) {
   const datacreatorEnd = startupGauge.startTimer({ task: 'datacreator' })
   await models.sequelize.sync({ force: true })
@@ -594,14 +602,14 @@ export async function start (readyCallback) {
     if (process.env.BASE_PATH !== '') {
       logger.info(colors.cyan(`Server using proxy base path ${colors.bold(process.env.BASE_PATH)} for redirects`))
     }
-    require('./lib/startup/registerWebsocketEvents')(server)
+    registerWebsocketEvents(server)
     if (readyCallback) {
       readyCallback()
     }
   })
 
-  collectDurationPromise('customizeApplication', require('./lib/startup/customizeApplication'))()
-  collectDurationPromise('customizeEasterEgg', require('./lib/startup/customizeEasterEgg'))()
+  collectDurationPromise('customizeApplication', customizeApplication)()
+  collectDurationPromise('customizeEasterEgg', customizeEasterEgg)()
 }
 
 export async function close (exitCode) {

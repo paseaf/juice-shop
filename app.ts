@@ -2,8 +2,8 @@
  * Copyright (c) 2014-2021 Bjoern Kimminich.
  * SPDX-License-Identifier: MIT
  */
-
-require('./lib/startup/validateDependencies')().then(() => {
+import validateDependencies = require('./lib/startup/validateDependencies')
+validateDependencies().then(() => {
   const server = require('./server')
   server.start()
 })

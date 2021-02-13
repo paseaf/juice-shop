@@ -13,6 +13,7 @@ import fs = require('fs')
 import download = require('download')
 import models = require('../models/index')
 import { challenges } from '../data/datacache'
+import validateChatBot = require('../lib/startup/validateChatBot')
 
 let trainingFile = config.get('application.chatBot.trainingData')
 let testCommand, bot
@@ -28,7 +29,7 @@ async function initialize () {
 
   trainingFile = utils.extractFilename(trainingFile)
   const trainingSet = fs.readFileSync(`data/chatbot/${trainingFile}`, 'utf8')
-  require('../lib/startup/validateChatBot')(JSON.parse(trainingSet))
+  validateChatBot(JSON.parse(trainingSet))
 
   testCommand = JSON.parse(trainingSet).data[0].utterances[0]
   bot = new Bot(config.get('application.chatBot.name'), config.get('application.chatBot.greeting'), trainingSet, config.get('application.chatBot.defaultResponse'))
