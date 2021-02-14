@@ -115,11 +115,11 @@ function setUserName (user, req, res) {
   })
 }
 
-module.exports.initialize = initialize
+export { initialize}
 
-module.exports.bot = bot
+export { bot }
 
-module.exports.status = function status () {
+export function status () {
   return async (req, res, next) => {
     if (!bot) {
       res.status(200).json({
@@ -172,7 +172,7 @@ module.exports.status = function status () {
   }
 }
 
-module.exports.process = function respond () {
+export const process = function respond () {
   return async (req, res, next) => {
     if (!bot) {
       res.status(200).json({

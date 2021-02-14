@@ -3,9 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const frisby = require('frisby')
-const config = require('config')
-const { initialize, bot } = require('../../routes/chatbot')
+import frisby = require('frisby')
+import config = require('config')
+import {bot, initialize} from "../../routes/chatbot";
+
 const fs = require('fs')
 const utils = require('../../lib/utils')
 

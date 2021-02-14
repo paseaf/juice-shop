@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-const frisby = require('frisby')
-const fs = require('fs')
-const path = require('path')
-const utils = require('../../lib/utils')
+import frisby = require('frisby')
+import fs = require('fs')
+import path = require('path')
+import utils = require('../../lib/utils')
 
 const URL = 'http://localhost:3000'
 
