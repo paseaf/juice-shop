@@ -578,6 +578,9 @@ app.use(angular())
 app.use(verify.errorHandlingChallenge())
 app.use(errorhandler())
 
+const registerWebsocketEvents = require('./lib/startup/registerWebsocketEvents')
+const customizeApplication = require('./lib/startup/customizeApplication')
+const customizeEasterEgg = require('./lib/startup/customizeEasterEgg')
 export async function start (readyCallback) {
   const datacreatorEnd = startupGauge.startTimer({ task: 'datacreator' })
   await models.sequelize.sync({ force: true })
@@ -592,14 +595,14 @@ export async function start (readyCallback) {
     if (process.env.BASE_PATH !== '') {
       logger.info(colors.cyan(`Server using proxy base path ${colors.bold(process.env.BASE_PATH)} for redirects`))
     }
-    require('./lib/startup/registerWebsocketEvents')(server)
+    registerWebsocketEvents(server)
     if (readyCallback) {
       readyCallback()
     }
   })
 
-  collectDurationPromise('customizeApplication', require('./lib/startup/customizeApplication'))()
-  collectDurationPromise('customizeEasterEgg', require('./lib/startup/customizeEasterEgg'))()
+  collectDurationPromise('customizeApplication', customizeApplication)()
+  collectDurationPromise('customizeEasterEgg', customizeEasterEgg)()
 }
 
 export async function close (exitCode) {
