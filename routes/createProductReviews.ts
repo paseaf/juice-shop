@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const db = require('../data/mongodb')
+import db = require('../data/mongodb')
 const utils = require('../lib/utils')
 const challenges = require('../data/datacache').challenges
 const insecurity = require('../lib/insecurity')

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const logger = require('../lib/logger')
+import logger = require('../lib/logger')
 
 module.exports = function countryMapping (config = require('config')) {
   return (req, res) => {

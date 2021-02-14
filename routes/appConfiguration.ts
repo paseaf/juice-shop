@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const config = require('config')
+import config = require('config')
 
 export = function retrieveAppConfiguration () {
   return (req, res) => {

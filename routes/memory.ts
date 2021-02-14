@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
+import models = require('../models/index')
 
 module.exports.addMemory = function addMemory () {
   return async (req, res, next) => {

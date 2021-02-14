@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
+import models = require('../models/index')
 
 function captchas () {
   return (req, res) => {

@@ -9,7 +9,7 @@ const orders = require('../data/mongodb').orders
 const reviews = require('../data/mongodb').reviews
 const challenges = require('../data/datacache').challenges
 const utils = require('../lib/utils')
-const config = require('config')
+import config = require('config')
 const models = require('../models')
 const Op = models.Sequelize.Op
 

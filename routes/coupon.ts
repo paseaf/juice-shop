@@ -4,7 +4,7 @@
  */
 
 const insecurity = require('../lib/insecurity')
-const models = require('../models/index')
+import models = require('../models/index')
 
 module.exports = function applyCoupon () {
   return ({ params }, res, next) => {

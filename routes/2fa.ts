@@ -3,11 +3,12 @@
  * SPDX-License-Identifier: MIT
  */
 
-const insecurity = require('../lib/insecurity')
-const models = require('../models/')
+import insecurity = require('../lib/insecurity')
+import models = require('../models/')
 const otplib = require('otplib')
-const utils = require('../lib/utils')
-const challenges = require('../data/datacache').challenges
+import utils = require('../lib/utils')
+import { challenges } from "../data/datacache";
+
 const config = require('config')
 
 otplib.authenticator.options = {

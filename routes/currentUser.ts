@@ -4,7 +4,7 @@
  */
 
 const insecurity = require('../lib/insecurity')
-const utils = require('../lib/utils')
+import utils = require('../lib/utils')
 const cache = require('../data/datacache')
 const challenges = cache.challenges
 

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const path = require('path')
+import path = require('path')
 
 module.exports = function serveLogFiles () {
   return ({ params }, res, next) => {

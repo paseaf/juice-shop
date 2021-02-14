@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
+import utils = require('../lib/utils')
+import insecurity = require('../lib/insecurity')
 const jwt = require('jsonwebtoken')
 const jws = require('jws')
 const models = require('../models/index')

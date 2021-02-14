@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
+import utils = require('../lib/utils')
 
 module.exports = function repeatNotification () {
   return ({ query }, res) => {

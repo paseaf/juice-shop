@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
+import utils = require('../lib/utils')
 const insecurity = require('../lib/insecurity')
 const challenges = require('../data/datacache').challenges
 

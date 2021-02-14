@@ -5,7 +5,7 @@
 
 const utils = require('../lib/utils')
 const insecurity = require('../lib/insecurity')
-const db = require('../data/mongodb')
+import db = require('../data/mongodb')
 const challenges = require('../data/datacache').challenges
 const models = require('../models/index')
 

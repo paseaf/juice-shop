@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../lib/utils')
+import utils = require('../lib/utils')
 const fs = require('fs')
 const models = require('../models/index')
 const insecurity = require('../lib/insecurity')

@@ -4,7 +4,7 @@
  */
 
 const insecurity = require('../lib/insecurity')
-const db = require('../data/mongodb')
+import db = require('../data/mongodb')
 
 module.exports.orderHistory = function orderHistory () {
   return async (req, res, next) => {

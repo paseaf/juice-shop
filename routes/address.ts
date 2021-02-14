@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
+import models = require('../models/index')
 
 module.exports.getAddress = function getAddress () {
   return async (req, res, next) => {

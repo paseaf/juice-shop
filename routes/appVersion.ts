@@ -4,7 +4,7 @@
  */
 
 const utils = require('../lib/utils')
-const config = require('config')
+import config = require('config')
 
 export = function retrieveAppVersion () {
   return (req, res) => {
