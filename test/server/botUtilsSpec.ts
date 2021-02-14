@@ -3,13 +3,12 @@
  * SPDX-License-Identifier: MIT
  */
 
-const chai = require('chai')
+import chai = require('chai')
 const expect = chai.expect
-const insecurity = require('../../lib/insecurity')
+import insecurity = require('../../lib/insecurity')
+import botUtils= require('../../lib/botUtils')
 
 describe('botUtils', () => {
-  const botUtils = require('../../lib/botUtils')
-
   describe('testFunction', () => {
     it('returns static test response', () => {
       expect(botUtils.testFunction()).to.deep.equal({

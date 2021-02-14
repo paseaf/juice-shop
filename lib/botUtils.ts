@@ -34,7 +34,7 @@ function testFunction (query, user) {
   }
 }
 
-module.exports = {
+export = {
   productPrice,
   couponCode,
   testFunction

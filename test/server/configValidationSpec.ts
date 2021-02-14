@@ -3,13 +3,15 @@
  * SPDX-License-Identifier: MIT
  */
 
-const chai = require('chai')
-const sinonChai = require('sinon-chai')
+import chai = require('chai')
+import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 
-const validateConfig = require('../../lib/startup/validateConfig')
-const { checkUnambiguousMandatorySpecialProducts, checkUniqueSpecialOnProducts, checkYamlSchema, checkMinimumRequiredNumberOfProducts, checkUnambiguousMandatorySpecialMemories, checkMinimumRequiredNumberOfMemories, checkUniqueSpecialOnMemories, checkSpecialMemoriesHaveNoUserAssociated } = require('../../lib/startup/validateConfig')
+import validateConfig = require('../../lib/startup/validateConfig')
+import { checkUnambiguousMandatorySpecialProducts, checkUniqueSpecialOnProducts, checkYamlSchema,
+  checkMinimumRequiredNumberOfProducts, checkUnambiguousMandatorySpecialMemories, checkMinimumRequiredNumberOfMemories,
+  checkUniqueSpecialOnMemories, checkSpecialMemoriesHaveNoUserAssociated } from '../../lib/startup/validateConfig'
 
 describe('configValidation', () => {
   describe('checkThatThereIsOnlyOneProductPerSpecial', () => {

@@ -3,15 +3,15 @@
  * SPDX-License-Identifier: MIT
  */
 
-const sinon = require('sinon')
-const chai = require('chai')
-const sinonChai = require('sinon-chai')
+import sinon = require('sinon')
+import chai = require('chai')
+import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
-const cache = require('../../data/datacache')
-const insecurity = require('../../lib/insecurity')
-const config = require('config')
-const utils = require('../../lib/utils')
+import cache = require('../../data/datacache')
+import insecurity = require('../../lib/insecurity')
+import config = require('config')
+import utils = require('../../lib/utils')
 
 describe('verify', () => {
   const verify = require('../../routes/verify')

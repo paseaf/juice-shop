@@ -5,7 +5,7 @@
 
 const config = require('config')
 
-module.exports = function retrieveAppConfiguration () {
+export = function retrieveAppConfiguration () {
   return (req, res) => {
     res.json({ config })
   }

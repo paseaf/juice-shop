@@ -3,15 +3,14 @@
  * SPDX-License-Identifier: MIT
  */
 
-const sinon = require('sinon')
-const chai = require('chai')
-const sinonChai = require('sinon-chai')
+import sinon = require('sinon')
+import chai = require('chai')
+import sinonChai = require('sinon-chai')
+import retrieveAppVersion = require('../../routes/appVersion')
 const expect = chai.expect
 chai.use(sinonChai)
 
 describe('appVersion', () => {
-  const retrieveAppVersion = require('../../routes/appVersion')
-
   it('should return version specified in package.json', () => {
     this.req = {}
     this.res = { json: sinon.spy() }

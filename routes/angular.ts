@@ -6,7 +6,7 @@
 const path = require('path')
 const utils = require('../lib/utils')
 
-module.exports = function serveAngularClient () {
+export = function serveAngularClient () {
   return ({ url }, res, next) => {
     if (!utils.startsWith(url, '/api') && !utils.startsWith(url, '/rest')) {
       res.sendFile(path.resolve(__dirname, '../frontend/dist/frontend/index.html'))

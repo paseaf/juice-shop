@@ -3,15 +3,14 @@
  * SPDX-License-Identifier: MIT
  */
 
-const sinon = require('sinon')
-const chai = require('chai')
-const sinonChai = require('sinon-chai')
+import sinon = require('sinon')
+import chai = require('chai')
+import sinonChai = require('sinon-chai')
+import serveAngularClient = require('../../routes/angular')
 const expect = chai.expect
 chai.use(sinonChai)
 
 describe('angular', () => {
-  const serveAngularClient = require('../../routes/angular')
-
   beforeEach(() => {
     this.req = { }
     this.res = { sendFile: sinon.spy() }

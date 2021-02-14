@@ -43,4 +43,4 @@ const checkIntentWithFunctionHandlerExists = (trainingData, intent, handler) => 
 
 validateChatBot.checkIntentWithFunctionHandlerExists = checkIntentWithFunctionHandlerExists
 
-module.exports = validateChatBot
+export = validateChatBot

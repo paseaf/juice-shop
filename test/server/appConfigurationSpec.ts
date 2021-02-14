@@ -3,20 +3,20 @@
  * SPDX-License-Identifier: MIT
  */
 
-const sinon = require('sinon')
-const chai = require('chai')
-const sinonChai = require('sinon-chai')
+import sinon = require('sinon')
+import chai = require('chai')
+import sinonChai = require('sinon-chai')
+import retrieveAppConfiguration = require('../../routes/appConfiguration')
+import configModule = require('config')
 const expect = chai.expect
 chai.use(sinonChai)
 
 describe('appConfiguration', () => {
-  const retrieveAppConfiguration = require('../../routes/appConfiguration')
-
   it('should return configuration object', () => {
     this.req = {}
     this.res = { json: sinon.spy() }
 
     retrieveAppConfiguration()(this.req, this.res)
-    expect(this.res.json).to.have.been.calledWith({ config: require('config') })
+    expect(this.res.json).to.have.been.calledWith({ config: configModule })
   })
 })

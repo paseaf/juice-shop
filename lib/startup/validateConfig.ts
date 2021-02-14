@@ -169,4 +169,4 @@ validateConfig.checkUniqueSpecialOnMemories = checkUniqueSpecialOnMemories
 validateConfig.checkMinimumRequiredNumberOfMemories = checkMinimumRequiredNumberOfMemories
 validateConfig.checkSpecialMemoriesHaveNoUserAssociated = checkSpecialMemoriesHaveNoUserAssociated
 
-module.exports = validateConfig
+export = validateConfig
