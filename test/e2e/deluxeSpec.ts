@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-const config = require('config')
-const request = require('request')
+import config = require('config')
+import request = require('request')
 
 describe('/#/deluxe-membership', () => {
   describe('challenge "svgInjection"', () => {

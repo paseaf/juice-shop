@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const config = require('config')
-const path = require('path')
-const utils = require('../../lib/utils')
+import config = require('config')
+import path = require('path')
+import utils = require('../../lib/utils')
 
 describe('/#/complain', () => {
   let file, complaintMessage, submitButton
