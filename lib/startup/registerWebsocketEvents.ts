@@ -4,7 +4,7 @@
  */
 
 const notifications = require('../../data/datacache').notifications
-const utils = require('../utils')
+import utils = require('../utils')
 const insecurity = require('../insecurity')
 const challenges = require('../../data/datacache').challenges
 const config = require('config')
