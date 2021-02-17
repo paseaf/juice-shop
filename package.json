@@ -54,7 +54,7 @@
   "scripts": {
     "build:frontend": "cd frontend && node ./node_modules/@angular/cli/bin/ng build --aot --prod --output-hashing=none --vendor-chunk=true --source-map=false",
     "build:server": "tsc",
-    "copy-static-files": "copyfiles -s \"config/**/*\" \"data/**/*\" \"encryptionkeys/**/*\" \"frontend/dist/**/*\" \"ftp/**/*\" \"i18n/**/*\" \"uploads/**/*\" \"views/**/*\" config.schema.yml package.json -e \"**/*.ts\" ./dist/",
+    "copy-static-files": "copyfiles -s \"config/**/*\" \"data/**/*\" \"encryptionkeys/**/*\" \"frontend/dist/**/*\" \"ftp/**/*\" \"i18n/**/*\" \"test/**/*\" \"uploads/**/*\" \"views/**/*\" config.schema.yml ctf.key package.json swagger.yml -e \"**/*.ts\" ./dist/",
     "e2e": "ts-node test/e2eTests.ts",
     "frisby": "nyc --report-dir=./build/reports/coverage/api-tests jest --silent --runInBand --forceExit",
     "postinstall": "cd frontend && npm install && cd .. && npm run build:frontend && npm run copy-static-files && npm run build:server",
