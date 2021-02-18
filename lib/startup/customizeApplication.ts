@@ -7,6 +7,7 @@ import fs = require('fs')
 const config = require('config')
 const replace = require('replace')
 const utils = require('../utils')
+const path = require('path')
 
 const customizeApplication = () => {
   if (config.get('application.name')) {
@@ -47,7 +48,9 @@ const customizeChatbotAvatar = async () => {
 
 const customizeHackingInstructorAvatar = async () => {
   const avatarImage = await retrieveCustomFile('hackingInstructor.avatarImage', 'frontend/dist/frontend/assets/public/images')
-  fs.copyFileSync('frontend/dist/frontend/assets/public/images/' + avatarImage, 'frontend/dist/frontend/assets/public/images/hackingInstructor.png')
+  const src = path.join(__dirname, '../../frontend/dist/frontend/assets/public/images', avatarImage)
+  const dest = path.join(__dirname, '../../frontend/dist/frontend/assets/public/images/hackingInstructor.png')
+  fs.copyFileSync(src, dest)
 }
 
 const customizeFavicon = async () => {
