@@ -43,13 +43,15 @@ const customizeLogo = async () => {
 
 const customizeChatbotAvatar = async () => {
   const avatarImage = await retrieveCustomFile('application.chatBot.avatar', 'frontend/dist/frontend/assets/public/images')
-  fs.copyFileSync('frontend/dist/frontend/assets/public/images/' + avatarImage, 'frontend/dist/frontend/assets/public/images/ChatbotAvatar.png')
+  const src = path.resolve(__dirname, '../../frontend/dist/frontend/assets/public/images/', avatarImage)
+  const dest = path.resolve(__dirname, '../../frontend/dist/frontend/assets/public/images/ChatbotAvatar.png')
+  fs.copyFileSync(src, dest)
 }
 
 const customizeHackingInstructorAvatar = async () => {
   const avatarImage = await retrieveCustomFile('hackingInstructor.avatarImage', 'frontend/dist/frontend/assets/public/images')
-  const src = path.join(__dirname, '../../frontend/dist/frontend/assets/public/images', avatarImage)
-  const dest = path.join(__dirname, '../../frontend/dist/frontend/assets/public/images/hackingInstructor.png')
+  const src = path.resolve(__dirname, '../../frontend/dist/frontend/assets/public/images', avatarImage)
+  const dest = path.resolve(__dirname, '../../frontend/dist/frontend/assets/public/images/hackingInstructor.png')
   fs.copyFileSync(src, dest)
 }
 
