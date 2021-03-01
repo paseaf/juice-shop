@@ -6,7 +6,7 @@
 import frisby = require('frisby')
 const Joi = frisby.Joi
 import utils = require('../../lib/utils')
-import insecurity = require('../../lib/insecurity')
+const insecurity = require('../../lib/insecurity')
 import config = require('config')
 
 const tamperingProductId = ((() => {

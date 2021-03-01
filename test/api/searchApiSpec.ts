@@ -4,7 +4,7 @@
  */
 
 import frisby = require('frisby')
-import insecurity = require('../../lib/insecurity')
+const insecurity = require('../../lib/insecurity')
 import config = require('config')
 
 const christmasProduct = config.get('products').filter(({ useForChristmasSpecialChallenge }) => useForChristmasSpecialChallenge)[0]

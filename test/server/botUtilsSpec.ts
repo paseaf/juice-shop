@@ -5,7 +5,7 @@
 
 import chai = require('chai')
 const expect = chai.expect
-import insecurity = require('../../lib/insecurity')
+const insecurity = require('../../lib/insecurity')
 import botUtils= require('../../lib/botUtils')
 
 describe('botUtils', () => {

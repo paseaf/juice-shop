@@ -6,7 +6,7 @@
 import frisby = require('frisby')
 const Joi = frisby.Joi
 import utils = require('../../lib/utils')
-import insecurity = require('../../lib/insecurity')
+const insecurity = require('../../lib/insecurity')
 
 const API_URL = 'http://localhost:3000/api'
 const REST_URL = 'http://localhost:3000/rest'

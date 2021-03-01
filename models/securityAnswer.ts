@@ -4,9 +4,9 @@
  */
 
 /* jslint node: true */
-import insecurity = require('../lib/insecurity')
+const insecurity = require('../lib/insecurity')
 
-module.exports = (sequelize, { STRING, INTEGER }) => {
+export = (sequelize, { STRING, INTEGER }) => {
   const SecurityAnswer = sequelize.define('SecurityAnswer', {
     answer: {
       type: STRING,

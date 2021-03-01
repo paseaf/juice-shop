@@ -4,7 +4,7 @@
  */
 
 /* jslint node: true */
-import insecurity = require('../lib/insecurity')
+const insecurity = require('../lib/insecurity')
 import utils = require('../lib/utils')
 import { challenges } from "../data/datacache";
 import config = require('config')

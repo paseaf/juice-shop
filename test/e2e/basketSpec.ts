@@ -2,8 +2,7 @@
  * Copyright (c) 2014-2021 Bjoern Kimminich.
  * SPDX-License-Identifier: MIT
  */
-
-import insecurity = require('../../lib/insecurity')
+const insecurity = require('../../lib/insecurity')
 import config = require('config')
 import models = require('../../models/index')
 

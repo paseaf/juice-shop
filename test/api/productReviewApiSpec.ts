@@ -5,7 +5,7 @@
 
 import frisby = require('frisby')
 const Joi = frisby.Joi
-import insecurity = require('../../lib/insecurity')
+const insecurity = require('../../lib/insecurity')
 import http = require('http')
 import config = require('config')
 

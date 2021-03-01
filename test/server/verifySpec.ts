@@ -9,7 +9,7 @@ import sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 import cache = require('../../data/datacache')
-import insecurity = require('../../lib/insecurity')
+const insecurity = require('../../lib/insecurity')
 import config = require('config')
 import utils = require('../../lib/utils')
 

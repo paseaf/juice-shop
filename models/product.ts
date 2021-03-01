@@ -5,7 +5,7 @@
 
 /* jslint node: true */
 import utils = require('../lib/utils')
-import insecurity = require('../lib/insecurity')
+const insecurity = require('../lib/insecurity')
 import {challenges} from "../data/datacache";
 
 module.exports = (sequelize, { STRING, DECIMAL }) => {

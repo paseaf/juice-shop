@@ -4,7 +4,7 @@
  */
 
 import utils = require('../lib/utils')
-import insecurity = require('../lib/insecurity')
+const insecurity = require('../lib/insecurity')
 const jwt = require('jsonwebtoken')
 const jws = require('jws')
 const models = require('../models/index')

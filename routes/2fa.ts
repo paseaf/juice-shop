@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import insecurity = require('../lib/insecurity')
+const insecurity = require('../lib/insecurity')
 import models = require('../models/')
 const otplib = require('otplib')
 import utils = require('../lib/utils')
