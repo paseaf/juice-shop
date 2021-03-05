@@ -5,12 +5,12 @@
 
 const path = require('path')
 
-module.exports = function serveKeyFiles () {
+module.exports = function serveLogFiles () {
   return ({ params }, res, next) => {
     const file = params.file
 
     if (!file.includes('/')) {
-      res.sendFile(path.resolve(__dirname, '../encryptionkeys/', file))
+      res.sendFile(path.resolve('logs/', file))
     } else {
       res.status(403)
       next(new Error('File names cannot contain forward slashes!'))

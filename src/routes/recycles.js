@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const models = require('../models/index')
+const models = require('../models')
 const utils = require('../lib/utils')
 
 exports.getRecycleItem = () => (req, res) => {

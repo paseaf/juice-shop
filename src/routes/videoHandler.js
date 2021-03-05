@@ -8,7 +8,7 @@ const pug = require('pug')
 const config = require('config')
 const challenges = require('../data/datacache').challenges
 const utils = require('../lib/utils')
-const themes = require('../views/themes/themes').themes
+const themes = require('../../views/themes/themes').themes
 
 exports.getVideo = () => {
   return (req, res) => {

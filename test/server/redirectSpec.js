@@ -10,8 +10,8 @@ const expect = chai.expect
 chai.use(sinonChai)
 
 describe('redirect', () => {
-  const performRedirect = require('../../routes/redirect')
-  const challenges = require('../../data/datacache').challenges
+  const performRedirect = require('../../src/routes/redirect')
+  const challenges = require('../../src/data/datacache').challenges
 
   beforeEach(() => {
     this.req = { query: {} }
@@ -23,7 +23,7 @@ describe('redirect', () => {
   })
 
   describe('should be performed for all allowlisted URLs', () => {
-    for (const url of require('../../lib/insecurity').redirectAllowlist) {
+    for (const url of require('../../src/lib/insecurity').redirectAllowlist) {
       it(url, () => {
         this.req.query.to = url
 

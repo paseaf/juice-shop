@@ -4,7 +4,7 @@
  */
 
 const config = require('config')
-const utils = require('../../lib/utils')
+const utils = require('../../src/lib/utils')
 
 describe('/profile', () => {
   let username, submitButton, url, setProfileImageButton

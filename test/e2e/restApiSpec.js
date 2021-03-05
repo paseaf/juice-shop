@@ -4,8 +4,8 @@
  */
 
 const config = require('config')
-const models = require('../../models/index')
-const utils = require('../../lib/utils')
+const models = require('../../src/models/index')
+const utils = require('../../src/lib/utils')
 
 describe('/api', () => {
   if (!utils.disableOnContainerEnv()) {

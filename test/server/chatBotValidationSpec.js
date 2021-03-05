@@ -8,8 +8,8 @@ const sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
 
-const validateChatBot = require('../../lib/startup/validateChatBot')
-const { checkIntentWithFunctionHandlerExists } = require('../../lib/startup/validateChatBot')
+const validateChatBot = require('../../src/lib/startup/validateChatBot')
+const { checkIntentWithFunctionHandlerExists } = require('../../src/lib/startup/validateChatBot')
 
 describe('chatBotValidation', () => {
   describe('checkIntentWithHandlerExists', () => {
@@ -63,7 +63,7 @@ describe('chatBotValidation', () => {
   })
 
   it('should accept the default chatbot training data', () => {
-    expect(validateChatBot(require('../../data/static/botDefaultTrainingData.json'))).to.equal(true)
+    expect(validateChatBot(require('../../src/data/static/botDefaultTrainingData.json'))).to.equal(true)
   })
 
   it('should fail if the chatbot training data is empty', () => {

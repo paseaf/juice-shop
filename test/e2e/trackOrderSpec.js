@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-const utils = require('../../lib/utils')
+const utils = require('../../src/lib/utils')
 
 describe('/#/track-order', () => {
   if (!utils.disableOnContainerEnv()) {

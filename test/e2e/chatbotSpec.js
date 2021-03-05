@@ -4,7 +4,7 @@
  */
 
 const config = require('config')
-const utils = require('../../lib/utils')
+const utils = require('../../src/lib/utils')
 
 describe('/chatbot', () => {
   let username, submitButton, messageBox
@@ -35,7 +35,7 @@ describe('/chatbot', () => {
 
   describe('challenge "bullyChatbot"', () => {
     it('should be possible to make the chatbot hand out a coupon code', () => {
-      const trainingData = require(`../../data/chatbot/${utils.extractFilename(config.get('application.chatBot.trainingData'))}`)
+      const trainingData = require(`../../src/data/chatbot/${utils.extractFilename(config.get('application.chatBot.trainingData'))}`)
       const couponIntent = trainingData.data.filter(data => data.intent === 'queries.couponCode')[0]
 
       browser.waitForAngularEnabled(false)

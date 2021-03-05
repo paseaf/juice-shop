@@ -10,8 +10,8 @@ const expect = chai.expect
 chai.use(sinonChai)
 
 describe('fileServer', () => {
-  const servePublicFiles = require('../../routes/fileServer')
-  const challenges = require('../../data/datacache').challenges
+  const servePublicFiles = require('../../src/routes/fileServer')
+  const challenges = require('../../src/data/datacache').challenges
 
   beforeEach(() => {
     this.res = { sendFile: sinon.spy(), status: sinon.spy() }

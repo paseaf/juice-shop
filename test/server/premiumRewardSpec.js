@@ -10,8 +10,8 @@ const expect = chai.expect
 chai.use(sinonChai)
 
 describe('premiumReward', () => {
-  const servePremiumContent = require('../../routes/premiumReward')
-  const challenges = require('../../data/datacache').challenges
+  const servePremiumContent = require('../../src/routes/premiumReward')
+  const challenges = require('../../src/data/datacache').challenges
 
   beforeEach(() => {
     this.res = { sendFile: sinon.spy() }

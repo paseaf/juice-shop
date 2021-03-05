@@ -7,9 +7,9 @@ const path = require('path')
 const utils = require('../lib/utils')
 const challenges = require('../data/datacache').challenges
 
-module.exports = function serveEasterEgg () {
+module.exports = function servePrivacyPolicyProof () {
   return (req, res) => {
-    utils.solveIf(challenges.easterEggLevelTwoChallenge, () => { return true })
-    res.sendFile(path.resolve(__dirname, '../frontend/dist/frontend/assets/private/threejs-demo.html'))
+    utils.solveIf(challenges.privacyPolicyProofChallenge, () => { return true })
+    res.sendFile(path.resolve('frontend/dist/frontend/assets/private/thank-you.jpg'))
   }
 }

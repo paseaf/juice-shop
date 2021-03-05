@@ -5,8 +5,8 @@
 
 const frisby = require('frisby')
 const Joi = frisby.Joi
-const utils = require('../../lib/utils')
-const security = require('../../lib/insecurity')
+const utils = require('../../src/lib/utils')
+const security = require('../../src/lib/insecurity')
 const config = require('config')
 
 const tamperingProductId = ((() => {

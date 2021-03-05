@@ -10,8 +10,8 @@ const expect = chai.expect
 chai.use(sinonChai)
 
 describe('continueCode', () => {
-  const retrieveCurrentContinueCode = require('../../routes/continueCode')
-  const challenges = require('../../data/datacache').challenges
+  const retrieveCurrentContinueCode = require('../../src/routes/continueCode')
+  const challenges = require('../../src/data/datacache').challenges
 
   beforeEach(() => {
     this.req = {}

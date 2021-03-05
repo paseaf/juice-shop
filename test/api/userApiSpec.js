@@ -5,8 +5,8 @@
 
 const frisby = require('frisby')
 const Joi = frisby.Joi
-const utils = require('../../lib/utils')
-const security = require('../../lib/insecurity')
+const utils = require('../../src/lib/utils')
+const security = require('../../src/lib/insecurity')
 
 const API_URL = 'http://localhost:3000/api'
 const REST_URL = 'http://localhost:3000/rest'

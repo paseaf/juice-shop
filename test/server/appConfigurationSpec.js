@@ -10,7 +10,7 @@ const expect = chai.expect
 chai.use(sinonChai)
 
 describe('appConfiguration', () => {
-  const retrieveAppConfiguration = require('../../routes/appConfiguration')
+  const retrieveAppConfiguration = require('../../src/routes/appConfiguration')
 
   it('should return configuration object', () => {
     this.req = {}

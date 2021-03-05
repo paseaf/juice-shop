@@ -10,7 +10,7 @@ const expect = chai.expect
 chai.use(sinonChai)
 
 describe('keyServer', () => {
-  const serveKeyFiles = require('../../routes/keyServer')
+  const serveKeyFiles = require('../../src/routes/keyServer')
 
   beforeEach(() => {
     this.req = { params: { } }

@@ -10,7 +10,7 @@ const net = require('net')
 chai.use(sinonChai)
 
 const semver = require('semver')
-const { checkIfRunningOnSupportedNodeVersion, checkIfPortIsAvailable } = require('../../lib/startup/validatePreconditions')
+const { checkIfRunningOnSupportedNodeVersion, checkIfPortIsAvailable } = require('../../src/lib/startup/validatePreconditions')
 
 describe('preconditionValidation', () => {
   describe('checkIfRunningOnSupportedNodeVersion', () => {

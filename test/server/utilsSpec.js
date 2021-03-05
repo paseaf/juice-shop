@@ -7,7 +7,7 @@ const chai = require('chai')
 const expect = chai.expect
 
 describe('utils', () => {
-  const utils = require('../../lib/utils')
+  const utils = require('../../src/lib/utils')
 
   describe('toSimpleIpAddress', () => {
     it('returns ipv6 address unchanged', () => {

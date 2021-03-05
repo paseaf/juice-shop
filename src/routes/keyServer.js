@@ -5,12 +5,12 @@
 
 const path = require('path')
 
-module.exports = function serveQuarantineFiles () {
-  return ({ params, query }, res, next) => {
+module.exports = function serveKeyFiles () {
+  return ({ params }, res, next) => {
     const file = params.file
 
     if (!file.includes('/')) {
-      res.sendFile(path.resolve(__dirname, '../ftp/quarantine/', file))
+      res.sendFile(path.resolve('encryptionkeys/', file))
     } else {
       res.status(403)
       next(new Error('File names cannot contain forward slashes!'))

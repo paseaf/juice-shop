@@ -7,7 +7,7 @@ const chai = require('chai')
 const expect = chai.expect
 
 describe('insecurity', () => {
-  const security = require('../../lib/insecurity')
+  const security = require('../../src/lib/insecurity')
 
   describe('cutOffPoisonNullByte', () => {
     it('returns string unchanged if it contains no null byte', () => {

@@ -12,6 +12,7 @@ const config = require('config')
 const fs = require('fs')
 const download = require('download')
 const models = require('../models/index')
+const path = require('path')
 const challenges = require('../data/datacache').challenges
 
 let trainingFile = config.get('application.chatBot.trainingData')
@@ -21,13 +22,16 @@ async function initialize () {
   if (utils.startsWith(trainingFile, 'http')) {
     const file = utils.extractFilename(trainingFile)
     const data = await download(trainingFile)
-    fs.writeFileSync('data/chatbot/' + file, data)
+    fs.writeFileSync(path.resolve('src/data/chatbot/' + file, data))
   }
 
-  fs.copyFileSync('data/static/botDefaultTrainingData.json', 'data/chatbot/botDefaultTrainingData.json')
+  fs.copyFileSync(
+    path.resolve('src/data/static/botDefaultTrainingData.json'),
+    path.resolve('src/data/chatbot/botDefaultTrainingData.json')
+  )
 
   trainingFile = utils.extractFilename(trainingFile)
-  const trainingSet = fs.readFileSync(`data/chatbot/${trainingFile}`, 'utf8')
+  const trainingSet = fs.readFileSync(path.resolve(`src/data/chatbot/${trainingFile}`), 'utf8')
   require('../lib/startup/validateChatBot')(JSON.parse(trainingSet))
 
   testCommand = JSON.parse(trainingSet).data[0].utterances[0]

@@ -10,7 +10,7 @@ const expect = chai.expect
 chai.use(sinonChai)
 
 describe('countryMapping', () => {
-  const countryMapping = require('../../routes/countryMapping')
+  const countryMapping = require('../../src/routes/countryMapping')
 
   beforeEach(() => {
     this.req = {}

@@ -6,7 +6,7 @@
 const frisby = require('frisby')
 const fs = require('fs')
 const path = require('path')
-const utils = require('../../lib/utils')
+const utils = require('../../src/lib/utils')
 
 const URL = 'http://localhost:3000'
 

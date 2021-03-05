@@ -10,8 +10,8 @@ const expect = chai.expect
 chai.use(sinonChai)
 
 describe('easterEgg', () => {
-  const serveEasterEgg = require('../../routes/easterEgg')
-  const challenges = require('../../data/datacache').challenges
+  const serveEasterEgg = require('../../src/routes/easterEgg')
+  const challenges = require('../../src/data/datacache').challenges
 
   beforeEach(() => {
     this.res = { sendFile: sinon.spy() }

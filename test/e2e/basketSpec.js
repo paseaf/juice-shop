@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-const security = require('../../lib/insecurity')
+const security = require('../../src/lib/insecurity')
 const config = require('config')
-const models = require('../../models/index')
+const models = require('../../src/models/index')
 
 describe('/#/basket', () => {
   describe('as admin', () => {

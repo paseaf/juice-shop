@@ -8,14 +8,14 @@ const chai = require('chai')
 const sinonChai = require('sinon-chai')
 const expect = chai.expect
 chai.use(sinonChai)
-const cache = require('../../data/datacache')
-const security = require('../../lib/insecurity')
+const cache = require('../../src/data/datacache')
+const security = require('../../src/lib/insecurity')
 const config = require('config')
-const utils = require('../../lib/utils')
+const utils = require('../../src/lib/utils')
 
 describe('verify', () => {
-  const verify = require('../../routes/verify')
-  const challenges = require('../../data/datacache').challenges
+  const verify = require('../../src/routes/verify')
+  const challenges = require('../../src/data/datacache').challenges
 
   beforeEach(() => {
     this.req = { body: {}, headers: {} }
@@ -203,7 +203,7 @@ describe('verify', () => {
 
   describe('databaseRelatedChallenges', () => {
     describe('"changeProductChallenge"', () => {
-      const products = require('../../data/datacache').products
+      const products = require('../../src/data/datacache').products
 
       beforeEach(() => {
         challenges.changeProductChallenge = { solved: false, save: this.save }

@@ -10,7 +10,7 @@ const expect = chai.expect
 chai.use(sinonChai)
 
 describe('appVersion', () => {
-  const retrieveAppVersion = require('../../routes/appVersion')
+  const retrieveAppVersion = require('../../src/routes/appVersion')
 
   it('should return version specified in package.json', () => {
     this.req = {}

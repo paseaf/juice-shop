@@ -11,9 +11,9 @@ package-lock.json
 i18n/*.json
 i18n/*.invalid
 !frontend/src/assets/i18n/*.json
-!data/static/i18n/*.json
-data/chatbot/*.*
-!data/chatbot/.gitkeep
+!src/data/static/i18n/*.json
+src/data/chatbot/*.*
+!src/data/chatbot/.gitkeep
 
 # Build
 .nyc_output/

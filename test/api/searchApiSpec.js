@@ -4,7 +4,7 @@
  */
 
 const frisby = require('frisby')
-const security = require('../../lib/insecurity')
+const security = require('../../src/lib/insecurity')
 const config = require('config')
 
 const christmasProduct = config.get('products').filter(({ useForChristmasSpecialChallenge }) => useForChristmasSpecialChallenge)[0]

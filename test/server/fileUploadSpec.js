@@ -10,8 +10,8 @@ describe('fileUpload', () => {
   const {
     checkUploadSize,
     checkFileType
-  } = require('../../routes/fileUpload')
-  const challenges = require('../../data/datacache').challenges
+  } = require('../../src/routes/fileUpload')
+  const challenges = require('../../src/data/datacache').challenges
 
   beforeEach(() => {
     this.req = { file: { originalname: '' } }

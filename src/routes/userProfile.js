@@ -10,7 +10,7 @@ const security = require('../lib/insecurity')
 const challenges = require('../data/datacache').challenges
 const pug = require('pug')
 const config = require('config')
-const themes = require('../views/themes/themes').themes
+const themes = require('../../views/themes/themes').themes
 
 module.exports = function getUserProfile () {
   return (req, res, next) => {

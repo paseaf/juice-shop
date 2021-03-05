@@ -5,10 +5,10 @@
 
 const chai = require('chai')
 const expect = chai.expect
-const security = require('../../lib/insecurity')
+const security = require('../../src/lib/insecurity')
 
 describe('botUtils', () => {
-  const botUtils = require('../../lib/botUtils')
+  const botUtils = require('../../src/lib/botUtils')
 
   describe('testFunction', () => {
     it('returns static test response', () => {

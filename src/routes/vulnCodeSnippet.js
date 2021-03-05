@@ -14,14 +14,14 @@ module.exports = function serveCodeSnippet () {
     if (challenge) {
       const matches = await FileSniffer
         .create()
-        .path('./server.js')
-        .path('./routes')
+        .path('./src/server.js')
+        .path('./src/routes')
         .path('./frontend/src/app')
         .depth(1)
         .collect(asArray())
         .find(new RegExp(`vuln-code-snippet start.*${challenge.key}`))
       if (matches[0]) { // TODO Currently only a single source file is supported
-        const source = fs.readFileSync(path.join(__dirname, '..', matches[0].path), 'utf8')
+        const source = fs.readFileSync(path.join(__dirname, '../..', matches[0].path), 'utf8')
         let snippet = source.match(`// vuln-code-snippet start.*${challenge.key}([^])*vuln-code-snippet end.*${challenge.key}`)
         if (snippet) {
           snippet = snippet[0] // TODO Currently only a single code snippet is supported

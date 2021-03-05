@@ -10,7 +10,7 @@ const expect = chai.expect
 chai.use(sinonChai)
 
 describe('angular', () => {
-  const serveAngularClient = require('../../routes/angular')
+  const serveAngularClient = require('../../src/routes/angular')
 
   beforeEach(() => {
     this.req = { }

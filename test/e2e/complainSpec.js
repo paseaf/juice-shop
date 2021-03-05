@@ -5,7 +5,7 @@
 
 const config = require('config')
 const path = require('path')
-const utils = require('../../lib/utils')
+const utils = require('../../src/lib/utils')
 
 describe('/#/complain', () => {
   let file, complaintMessage, submitButton

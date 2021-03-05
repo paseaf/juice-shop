@@ -9,7 +9,7 @@ const chaiAsPromised = require('chai-as-promised')
 chai.use(chaiAsPromised)
 
 describe('webhook', () => {
-  const webhook = require('../../lib/webhook')
+  const webhook = require('../../src/lib/webhook')
 
   const challenge = {
     key: 'key',

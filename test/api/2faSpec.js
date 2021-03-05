@@ -5,7 +5,7 @@
 
 const frisby = require('frisby')
 const Joi = frisby.Joi
-const security = require('../../lib/insecurity')
+const security = require('../../src/lib/insecurity')
 const config = require('config')
 
 const otplib = require('otplib')

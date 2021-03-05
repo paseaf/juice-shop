@@ -10,8 +10,8 @@ const expect = chai.expect
 chai.use(sinonChai)
 
 describe('b2bOrder', () => {
-  const createB2bOrder = require('../../routes/b2bOrder')
-  const challenges = require('../../data/datacache').challenges
+  const createB2bOrder = require('../../src/routes/b2bOrder')
+  const challenges = require('../../src/data/datacache').challenges
 
   beforeEach(() => {
     this.req = { body: { } }
